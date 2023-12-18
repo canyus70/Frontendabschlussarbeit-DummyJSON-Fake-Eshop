@@ -1,21 +1,31 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Products } from "../../context/Context";
 import ProductItem from "../productitem/ProductItem";
 import "./ProductList.scss"
 
 const ProduktList = () => {
     const context = useContext(Products);
+    const [sortedProducts, setSortedProducts] = useState([...context.products]);
 
-    const preisAufsteigend = () => [...context].sort((price1, price2) => {
-        return price1.price - price2.price
-    })
+    const preisAufsteigend = () => {
+        const sorted = [...context.products].sort((a, b) => a.price - b.price);
+        setSortedProducts(sorted);
+        console.log(sorted)
+    };
+
+    const preisAbsteigend = () => {
+        const sorted = [...context.products].sort((a, b) => b.price - a.price);
+        setSortedProducts(sorted);
+        console.log(sorted)
+    };
+
+
 
     return ( <section className="grid_container">
-            {context.products.map((product, index) => 
-
+            <div>Sort by: <button onClick={preisAufsteigend}>aufsteigend</button><button onClick={preisAbsteigend}>absteigend</button> </div>
+            {sortedProducts.map((product, index) => 
             <div key={index}>
                 <ProductItem 
-                key={index}
                 id={product.id}
                 img={product.thumbnail}
                 price={product.price}
