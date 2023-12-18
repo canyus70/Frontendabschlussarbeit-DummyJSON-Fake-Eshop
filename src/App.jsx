@@ -19,6 +19,8 @@ import {
 	Qoutes,
 } from "./context/Context";
 import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import ProductDetails from "./components/productdetails/ProductDetails";
 
 function App() {
 	const productContext = useContext(Products);
@@ -55,7 +57,11 @@ function App() {
 
 	return (
 		<Products.Provider value={contextObject}>
-			<Home />
+			<Routes >
+				<Route path="/" element={<Home />}/>
+				<Route path="/product-details/:id" element={<ProductDetails />}/>
+			</Routes>
+			
 		</Products.Provider>
 	);
 }
