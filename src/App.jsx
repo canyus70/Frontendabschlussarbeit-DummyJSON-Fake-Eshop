@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import {
+	allProducts,
+	allCarts,
+	allUsers,
+	allPosts,
+	allComments,
+	allTodos,
+	allQoutes,
+} from "./data/Data";
+import { useContext, useState } from "react";
+import {
+	Products,
+	Carts,
+	Users,
+	Posts,
+	Comments,
+	Todos,
+	Qoutes,
+} from "./context/Context";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const productContext = useContext(Products);
+	const cartsContext = useContext(Carts);
+	const usersContext = useContext(Users);
+	const postsContext = useContext(Posts);
+	const commetsContext = useContext(Comments);
+	const todosContext = useContext(Todos);
+	const qoutesContext = useContext(Qoutes);
+	const [products, setProducts] = useState(allProducts);
+	const [carts, setCarts] = useState(allCarts);
+	const [users, setUsers] = useState(allUsers);
+	const [posts, setPosts] = useState(allPosts);
+	const [comments, setComments] = useState(allComments);
+	const [todos, setTodos] = useState(allTodos);
+	const [qoutes, setQoutes] = useState(allQoutes);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const contextObject = {
+		products,
+		setProducts,
+		carts,
+		setCarts,
+		users,
+		setUsers,
+		posts,
+		setPosts,
+		comments,
+		setComments,
+		todos,
+		setTodos,
+		qoutes,
+		setQoutes,
+	};
+	console.log(cartsContext);
+
+	return (
+		<Products.Provider value={contextObject}>
+			<></>
+		</Products.Provider>
+	);
 }
 
-export default App
+export default App;
