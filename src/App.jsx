@@ -18,6 +18,7 @@ import {
 	Todos,
 	Qoutes,
 } from "./context/Context";
+import Home from "./pages/Home";
 
 function App() {
 	const productContext = useContext(Products);
@@ -51,11 +52,10 @@ function App() {
 		qoutes,
 		setQoutes,
 	};
-	console.log(cartsContext);
 
 	return (
 		<Products.Provider value={contextObject}>
-			<></>
+			<Home />
 		</Products.Provider>
 	);
 }
