@@ -16,7 +16,7 @@ import {
 	Posts,
 	Comments,
 	Todos,
-	Qoutes,
+	Qoutes
 } from "./context/Context";
 import Home from "./pages/Home";
 import Splashscreen from "./pages/splashscreen/Splashscreen";
@@ -34,6 +34,8 @@ function App() {
 	const commetsContext = useContext(Comments);
 	const todosContext = useContext(Todos);
 	const qoutesContext = useContext(Qoutes);
+
+	const [darkmode, setDarkmode] = useState(false)
 	const [products, setProducts] = useState(allProducts);
 	const [carts, setCarts] = useState(allCarts);
 	const [users, setUsers] = useState(allUsers);
@@ -57,17 +59,21 @@ function App() {
 		setTodos,
 		qoutes,
 		setQoutes,
+		darkmode,
+		setDarkmode
 	};
 
 	return (
 		<Products.Provider value={contextObject}>
-			<Routes>
-				<Route path="/" element={<Splashscreen/>}/>
-				<Route path="/onboarding" element={<Onboarding/>}/>
-				<Route path="/productlist/:id" element={<ProduktList/>}/>
-				<Route path="/home" element={<Home/>}/>
-				<Route path="/product-details/:id" element={<ProductDetails />}/>
-			</Routes>
+			<div className={`appContainer_App ${darkmode ? "darkmode" : ""}`}>
+				<Routes>
+					<Route path="/" element={<Splashscreen/>}/>
+					<Route path="/onboarding" element={<Onboarding/>}/>
+					<Route path="/productlist/:id" element={<ProduktList/>}/>
+					<Route path="/home" element={<Home/>}/>
+					<Route path="/product-details/:id" element={<ProductDetails />}/>
+				</Routes>
+			</div>
 		</Products.Provider>
 	);
 }	
