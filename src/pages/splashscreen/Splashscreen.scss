@@ -1,0 +1,17 @@
+.background_Splashscreen {
+    text-align: center;
+    background-color: #364FD4;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contentContainer_Splashscreen {
+        .icon_Splashscreen {
+            padding-block: 16px;
+        }
+        .text_Splashscreen {
+            color: white;
+        }
+    }
+}
