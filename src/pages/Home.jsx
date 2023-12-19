@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { useContext, useState } from "react";
 import { Products } from "../context/Context";
 import Search from "../components/search/Search";
 import CategoryBar from "../components/categorybar/CategoryBar";
