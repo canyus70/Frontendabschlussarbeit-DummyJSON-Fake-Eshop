@@ -41,6 +41,9 @@ function App() {
 	const [comments, setComments] = useState(allComments);
 	const [todos, setTodos] = useState(allTodos);
 	const [qoutes, setQoutes] = useState(allQoutes);
+	const [slide, setSlide] = useState(false);
+	const [price, setPrice] = useState({ lowest: "", highest: "" });
+	const [brand, setBrand] = useState("");
 
 	const contextObject = {
 		products,
@@ -57,19 +60,40 @@ function App() {
 		setTodos,
 		qoutes,
 		setQoutes,
+		slide,
+		setSlide,
+		price,
+		setPrice,
+		brand,
+		setBrand,
 	};
 
 	return (
 		<Products.Provider value={contextObject}>
 			<Routes>
-				<Route path="/" element={<Splashscreen/>}/>
-				<Route path="/onboarding" element={<Onboarding/>}/>
-				<Route path="/productlist/:id" element={<ProduktList/>}/>
-				<Route path="/home" element={<Home/>}/>
-				<Route path="/product-details/:id" element={<ProductDetails />}/>
+				<Route
+					path='/'
+					element={<Splashscreen />}
+				/>
+				<Route
+					path='/onboarding'
+					element={<Onboarding />}
+				/>
+				<Route
+					path='/productlist/:id'
+					element={<ProduktList />}
+				/>
+				<Route
+					path='/home'
+					element={<Home />}
+				/>
+				<Route
+					path='/product-details/:id'
+					element={<ProductDetails />}
+				/>
 			</Routes>
 		</Products.Provider>
 	);
-}	
+}
 
 export default App;
