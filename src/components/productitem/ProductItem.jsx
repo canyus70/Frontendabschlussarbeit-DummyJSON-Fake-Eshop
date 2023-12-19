@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import ProductDetails from "../productdetails/ProductDetails";
 import "./ProductItem.scss"
 
-const ProductItem = ({key, id, img, price, rating,name}) => {
-    return ( <article key={key}>
+const ProductItem = ({ id, img, price, rating,name}) => {
+    return ( <article>
         <Link to={`/product-details/${id}`}>
         <img src={img} alt={name}/>
         <p>{rating}</p>
