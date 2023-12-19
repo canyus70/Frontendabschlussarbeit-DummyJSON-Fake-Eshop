@@ -5,6 +5,7 @@ import Star from './../svg/Star';
 import LeftArrow from "../svg/LeftArrow";
 import './ProductDetails.scss'
 import Plus from "../svg/Plus";
+import Navbar from "../navbar/Navbar";
 
 const ProductDetails = () => {
     const [count, setCount] = useState(1);
@@ -63,6 +64,7 @@ const ProductDetails = () => {
                     <button className="addToCart">Add to Cart</button>
                 </article>
             ))}
+            <Navbar/>
         </> 
     );
 }
