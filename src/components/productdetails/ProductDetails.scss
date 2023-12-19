@@ -3,7 +3,7 @@
     padding: 5%;
     padding-bottom: 20vh;
     // !! Platzhalter Backgound, muss noch angepasst werden
-    background-color: rgb(237, 235, 235);
+    background-color: var(--backgroundItem);
 
     .header_wrap_details{
         margin-top: 3vh;
@@ -41,7 +41,7 @@
             border-top-left-radius: 24px;
         }
         .info_wrap_details{
-            background-color: white;
+            background-color: inherit;
             padding: 5%;
             border-bottom-left-radius: 24px;
             border-bottom-right-radius: 24px;
@@ -59,7 +59,6 @@
                     }
                     button {
                         padding: 4px 8px;
-                        color: white;
                         border: none;
                         border-radius: 4px;
                         &:nth-of-type(1){
@@ -111,10 +110,9 @@
         padding: 4%;
         border-radius: 16px;
         border: none;
-        color: white;
-        background-color: #364FD4;
+        background-color: var(--select);
         &:hover{
-            background-color: #2a3da8;
+            background-color: var(--selectSelected);
             cursor: pointer;
         }
     }
