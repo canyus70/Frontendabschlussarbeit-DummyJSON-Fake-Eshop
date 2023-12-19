@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.scss"
+import Plus2 from "../svg/Plus2";
 
 const ProductItem = ({ id, image, price, rating,title}) => {
     return ( <article>
@@ -10,7 +11,8 @@ const ProductItem = ({ id, image, price, rating,title}) => {
         </Link>
         <div className="flex_pundbutton">
         <p>$ {price}</p>
-        <button>+ für Warehinzufügen</button>
+        <button><Plus2/> </button>
+        
         </div>
 
     </article> );
