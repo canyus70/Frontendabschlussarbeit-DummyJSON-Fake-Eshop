@@ -14,9 +14,6 @@ const ProductDetails = () => {
     const path = useParams();
     const completePath = path.id;
 
-    // Variable definiert für den LeftArrow, um bei onClick auf die previous Page weitergeleitet zu werden:
-    const navigate = useNavigate();
-
     // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
     // Variable definiert für den LeftArrow, um bei onClick auf die previous Page weitergeleitet zu werden:
     const navigate = useNavigate();
