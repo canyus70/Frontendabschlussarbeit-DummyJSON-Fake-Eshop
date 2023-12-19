@@ -1,7 +1,10 @@
 .container_Onbaording {
+    background-color: var(--background);
+    height: 100vh;
+    padding-top: 100px;
     .imageContainer_Onboarding {
         overflow: clip;
-        margin: 100px auto 0 auto;
+        margin: 0 auto;
         width: 430px;
         height: 430px;
         position: relative;
@@ -110,7 +113,7 @@
             margin: 100px auto 0 auto;
             text-decoration: none;
             color: white;
-            background-color: #364FD4;
+            background-color: var(--select);
             padding-block: 6px;
             border-radius: 9px;
             width: 167px;

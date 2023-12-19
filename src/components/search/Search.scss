@@ -13,7 +13,7 @@
 		border-radius: 8px;
 		padding: 2%;
 		background: url(../../../public/img/Search.svg) left / 13% no-repeat;
-		background-color: #e8e8e8;
+		background-color: var(--background);
 		box-shadow: 0 0 4px rgb(171, 171, 171);
 		&:focus {
 			outline: none;
@@ -33,7 +33,7 @@
 	img {
 		width: 70%;
 		cursor: pointer;
-		background-color: #364fd4;
+		background-color: var(--select);
 		width: 15%;
 		padding: 2%;
 		aspect-ratio: 1 / 1;
