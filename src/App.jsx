@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import {
 	allProducts,
 	allCarts,
@@ -19,6 +19,8 @@ import {
 	Qoutes,
 } from "./context/Context";
 import Home from "./pages/Home";
+import Splashscreen from "./pages/splashscreen/Splashscreen";
+import Onboarding from "./pages/Onboarding/Onboarding";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
 
@@ -57,11 +59,12 @@ function App() {
 
 	return (
 		<Products.Provider value={contextObject}>
-			<Routes >
-				<Route path="/" element={<Home />}/>
+			<Routes>
+				<Route path="/" element={<Splashscreen/>}/>
+				<Route path="/onboarding" element={<Onboarding/>}/>
+				<Route path="/home" element={<Home/>}/>
 				<Route path="/product-details/:id" element={<ProductDetails />}/>
 			</Routes>
-			
 		</Products.Provider>
 	);
 }
