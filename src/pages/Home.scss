@@ -1,0 +1,22 @@
+main {
+    background-color: #f5f5f5;
+    text-align: center;
+    padding-block: 2.5%;
+    h1 {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 3vh;
+        font-size: 1.8rem;
+    }
+    div {
+        display: flex;
+        padding-inline: 2.5%;
+        justify-content: space-between;
+        width: 100%;
+        a {
+            h3 {
+                color: gray;
+            }
+        }
+    }
+}
