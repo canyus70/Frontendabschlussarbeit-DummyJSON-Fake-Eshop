@@ -10,7 +10,7 @@ const ProductItem = ({ id, image, price, rating,title}) => {
         </Link>
         <div className="flex_pundbutton">
         <p>$ {price}</p>
-        <button>+ für Warehinzufügen</button>
+        <button>+</button>
         </div>
 
     </article> );
