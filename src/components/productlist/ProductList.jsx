@@ -1,17 +1,16 @@
-
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { Products } from "../../context/Context";
 import Gallery from "../gallery/Gallery";
 import Search from "../search/Search";
 import "./ProductList.scss";
 import Navbar from "../navbar/Navbar";
+import SlideIn from "../slideIn/SlideIn";
 
 const ProduktList = () => {
-
 	const context = useContext(Products);
 	const id = useParams().id;
-
+	const allProducts = [...context.products];
 	const [sort, setSort] = useState("");
 
 	const searchResult = useLocation();
@@ -54,17 +53,17 @@ const ProduktList = () => {
 		} else if (id === "search") {
 			setRenderProducts(searchResult.state.result);
 		} else if (id === "all") {
-			setRenderProducts([...context.products]);
+			setRenderProducts(allProducts);
 		} else {
 			setRenderProducts(category);
 		}
-		console.log(sort);
 	}, [id, searchResult, sort]);
 
 	return (
 		<section className='productList'>
+			<SlideIn />
 			<Search />
-			<form>
+			<form className='sortandall'>
 				<label htmlFor=''>
 					sort by:
 					<select
@@ -85,12 +84,12 @@ const ProduktList = () => {
 						? renderProductsLow
 						: renderProductsRating
 				}
+				setRenderProducts={setRenderProducts}
 				id={id}
 			/>
-			<Navbar/>
+			<Navbar />
 		</section>
 	);
 };
-
 
 export default ProduktList;

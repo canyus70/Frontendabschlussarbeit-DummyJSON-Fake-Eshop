@@ -43,6 +43,9 @@ function App() {
 	const [comments, setComments] = useState(allComments);
 	const [todos, setTodos] = useState(allTodos);
 	const [qoutes, setQoutes] = useState(allQoutes);
+	const [slide, setSlide] = useState(false);
+	const [price, setPrice] = useState({ lowest: "", highest: "" });
+	const [brand, setBrand] = useState("");
 
 	const contextObject = {
 		products,
@@ -60,7 +63,13 @@ function App() {
 		qoutes,
 		setQoutes,
 		darkmode,
-		setDarkmode
+		setDarkmode,
+		slide,
+		setSlide,
+		price,
+		setPrice,
+		brand,
+		setBrand,
 	};
 
 	return (
@@ -76,6 +85,6 @@ function App() {
 			</div>
 		</Products.Provider>
 	);
-}	
+}
 
 export default App;

@@ -1,3 +1,21 @@
-.productList{
-    padding-bottom: 15vh;
+.productList {
+	background-color: var(--background);
+	padding-block: 5%;
+	.sortandall {
+		display: flex;
+		justify-content: space-between;
+		margin-inline: 3%;
+	}
+	label {
+		select {
+			color: var(--select);
+			border: none;
+			background: transparent;
+			-webkit-appearance: none;
+			width: 25vw;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
 }
