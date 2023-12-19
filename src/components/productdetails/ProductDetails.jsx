@@ -3,18 +3,22 @@ import { Products } from "./../../context/Context";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Star from './../svg/Star';
 import LeftArrow from "../svg/LeftArrow";
+import Heart from './../svg/Heart';
 import './ProductDetails.scss'
 import Plus from "../svg/Plus";
 import Navbar from "../navbar/Navbar";
+import HeartFilled from "../svg/HeartFilled";
 
 const ProductDetails = () => {
     const [count, setCount] = useState(1);
+    const [favorite, setFavorite] = useState(false);
+    const [favoritesDB, setFavoritesDB] = useState([]);
+
     const context = useContext(Products);
 
     const path = useParams();
     const completePath = path.id;
 
-    // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
     // Variable definiert für den LeftArrow, um bei onClick auf die previous Page weitergeleitet zu werden:
     const navigate = useNavigate();
 
@@ -26,7 +30,6 @@ const ProductDetails = () => {
     })
 
     // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
-    // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
         setCount(count + 1)
     }
@@ -37,6 +40,7 @@ const ProductDetails = () => {
         }
     }
 
+
     return ( 
         <>
             {filteredProductDetail.map((product, index) => (
@@ -44,6 +48,7 @@ const ProductDetails = () => {
                     <div className="header_wrap_details">
                         <div className="leftArrow_wrap_details" onClick={() => navigate(-1)}> <LeftArrow /> </div>
                         <h2 className="headerTitle_details">{product.title}</h2>
+                        <div className="heart_wrap_details" onClick={() => setFavorite(!favorite)}> {favorite ? <HeartFilled /> : <Heart />} </div>
                     </div>
                     
                     <div className="detailCard_wrap_details">
