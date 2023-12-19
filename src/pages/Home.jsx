@@ -5,6 +5,8 @@ import CategoryBar from "../components/categorybar/CategoryBar";
 import Gallery from "../components/gallery/Gallery";
 import "./Home.scss";
 import { Link } from "react-router-dom";
+import "./Home.scss";
+import Navbar from "../components/navbar/Navbar";
 
 const Home = () => {
     const context = useContext(Products);
@@ -14,7 +16,7 @@ const Home = () => {
     const Allproducts = "all";
 
     return (
-        <main>
+        <main className="galleryContainer_Home">
             <h1>Find your favorite Product</h1>
             <Search />
             <CategoryBar />
@@ -25,6 +27,7 @@ const Home = () => {
                 </Link>
             </div>
             <Gallery renderProducts={popular} />
+			<Navbar/>
         </main>
     );
 };

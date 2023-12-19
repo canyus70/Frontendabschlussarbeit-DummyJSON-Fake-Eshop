@@ -1,7 +1,10 @@
 .detailPage_wrap{
+    // kompletter wrapper der Detailpage
     padding: 5%;
     padding-bottom: 20vh;
+    // !! Platzhalter Backgound, muss noch angepasst werden
     background-color: rgb(237, 235, 235);
+
     .header_wrap_details{
         margin-top: 3vh;
         margin-bottom: 4vh;
@@ -20,6 +23,7 @@
             margin: 0 auto;
         }
     }
+    
     .detailCard_wrap_details{
         
         img {

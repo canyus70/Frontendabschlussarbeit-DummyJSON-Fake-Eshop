@@ -5,8 +5,10 @@ import { Products } from "../../context/Context";
 import Gallery from "../gallery/Gallery";
 import Search from "../search/Search";
 import "./ProductList.scss";
+import Navbar from "../navbar/Navbar";
 
 const ProduktList = () => {
+
 	const context = useContext(Products);
 	const id = useParams().id;
 
@@ -58,6 +60,7 @@ const ProduktList = () => {
 		}
 		console.log(sort);
 	}, [id, searchResult, sort]);
+
 	return (
 		<section className='productList'>
 			<Search />
@@ -84,6 +87,7 @@ const ProduktList = () => {
 				}
 				id={id}
 			/>
+			<Navbar/>
 		</section>
 	);
 };
