@@ -1,5 +1,46 @@
-.flex_pundbutton {
-    display: flex;
-    justify-content:flex-start;
-    gap: 5px;
+.productItem {
+	background-color: #ffffff;
+	padding: 5%;
+	border-radius: 12px;
+	text-align: left;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 4px 1px rgb(124, 124, 124);
+	.productImage {
+		border-radius: 8px;
+		margin-bottom: 0.7vh;
+		background-color: #ffffff;
+		width: 90%;
+		margin: 0 auto;
+		aspect-ratio: 1 / 1;
+		object-fit: contain;
+	}
+	h4,
+	h3,
+	h2 {
+		margin-bottom: 0.8vh;
+		font-size: 0.7rem;
+		color: gray;
+	}
+
+	h2 {
+		font-size: 0.9rem;
+		color: black;
+		margin-bottom: 14%;
+	}
+	h3 {
+		font-size: 0.9rem;
+		color: #364fd4;
+	}
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		bottom: 2%;
+		left: 0;
+		right: 0;
+		padding-inline: 5%;
+	}
 }

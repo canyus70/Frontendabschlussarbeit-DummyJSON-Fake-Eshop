@@ -1,21 +1,33 @@
 import { Link } from "react-router-dom";
-import "./ProductItem.scss"
-import Plus2 from "../svg/Plus2";
+import "./ProductItem.scss";
+import Frame from "../../../public/img/Frame.svg";
 
-const ProductItem = ({ id, image, price, rating,title}) => {
-    return ( <article>
-        <Link to={`/product-details/${id}`}>
-        <img src={image} alt={title}/>
-        <p>{rating}</p>
-        <p>{title}</p>
-        </Link>
-        <div className="flex_pundbutton">
-        <p>$ {price}</p>
-        <button><Plus2/> </button>
-        
-        </div>
-
-    </article> );
-}
+const ProductItem = ({ title, price, image, rating }) => {
+	return (
+		<article className='productItem'>
+			<Link onClick={(e) => console.log("product")}>
+				<img
+					src={image}
+					alt=''
+					className='productImage'
+				/>
+				<h4>⭐ {rating}</h4>
+				<h2>{title}</h2>
+			</Link>
+			<div>
+				<h3>${Number(price).toFixed(2)}</h3>
+				<Link
+					className='addButton'
+					onClick={() => console.log("+")}>
+					<img
+						src={Frame}
+						alt='button for adding to cart'
+						className='addButton'
+					/>
+				</Link>
+			</div>
+		</article>
+	);
+};
 
 export default ProductItem;

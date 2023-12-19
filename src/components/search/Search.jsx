@@ -8,7 +8,7 @@ const Search = () => {
 	const [searchInput, setSearchInput] = useState("");
 	const [result, setResult] = useState([]);
 	const navigate = useNavigate();
-	const context = useContext(Products);
+	const { products, slide, setSlide } = useContext(Products);
 
 	const searchRender = "search";
 
@@ -22,7 +22,7 @@ const Search = () => {
 	useEffect(() => {
 		if (searchInput.length > 3) {
 			setResult(
-				[...context.products].filter((product) => {
+				[...products].filter((product) => {
 					if (
 						product.title.toLowerCase().includes(searchInput) ||
 						product.description
@@ -36,6 +36,7 @@ const Search = () => {
 			);
 		}
 	}, [searchInput]);
+
 	return (
 		<form
 			className='search'
@@ -45,12 +46,12 @@ const Search = () => {
 				placeholder='Search...'
 				onChange={(e) => setSearchInput(e.target.value)}
 			/>
-			<button>
-				<img
-					src={Filter}
-					alt=''
-				/>
-			</button>
+
+			<img
+				src={Filter}
+				alt=''
+				onClick={() => setSlide(!slide)}
+			/>
 		</form>
 	);
 };

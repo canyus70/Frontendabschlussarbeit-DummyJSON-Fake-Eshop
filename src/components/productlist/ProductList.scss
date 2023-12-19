@@ -1,4 +1,21 @@
-.grid_container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+.productList {
+	background-color: #f5f5f5;
+	padding-block: 5%;
+	.sortandall {
+		display: flex;
+		justify-content: space-between;
+		margin-inline: 3%;
+	}
+	label {
+		select {
+			color: #364fd4;
+			border: none;
+			background: transparent;
+			-webkit-appearance: none;
+			width: 25vw;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
 }
