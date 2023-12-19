@@ -14,14 +14,17 @@ const ProductDetails = () => {
     const path = useParams();
     const completePath = path.id;
 
+    // Variable definiert für den LeftArrow, um bei onClick auf die previous Page weitergeleitet zu werden:
+    const navigate = useNavigate();
+
+    // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
     const productArr = [...context.products];
 
     const filteredProductDetail = productArr.filter((singleProductObj) => {
         return singleProductObj.id.toString() === completePath.toString();
     })
 
-    const navigate = useNavigate();
-
+    // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
         setCount(count + 1)
     }

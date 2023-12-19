@@ -9,6 +9,7 @@ const Gallery = ({ renderProducts, id }) => {
 			{renderProducts.map((product) => (
 				<ProductItem
 					key={product.id}
+					id={product.id}
 					title={product.title}
 					price={Number(product.price).toFixed(2)}
 					image={product.thumbnail}
