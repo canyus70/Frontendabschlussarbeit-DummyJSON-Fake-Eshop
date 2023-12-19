@@ -4,6 +4,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import Star from './../svg/Star';
 import LeftArrow from "../svg/LeftArrow";
 import './ProductDetails.scss'
+import Plus from "../svg/Plus";
+import Navbar from "../navbar/Navbar";
 
 const ProductDetails = () => {
     const [count, setCount] = useState(1);
@@ -16,12 +18,17 @@ const ProductDetails = () => {
     const navigate = useNavigate();
 
     // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
+    // Variable definiert für den LeftArrow, um bei onClick auf die previous Page weitergeleitet zu werden:
+    const navigate = useNavigate();
+
+    // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
     const productArr = [...context.products];
 
     const filteredProductDetail = productArr.filter((singleProductObj) => {
         return singleProductObj.id.toString() === completePath.toString();
     })
 
+    // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
         setCount(count + 1)
@@ -65,6 +72,7 @@ const ProductDetails = () => {
                     <button className="addToCart">Add to Cart</button>
                 </article>
             ))}
+            <Navbar/>
         </> 
     );
 }
