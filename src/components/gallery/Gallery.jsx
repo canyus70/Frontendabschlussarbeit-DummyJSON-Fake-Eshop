@@ -1,15 +1,47 @@
 import "./Gallery.scss";
 import ProductItem from "../productitem/ProductItem";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Products } from "../../context/Context";
 
 const Gallery = ({ renderProducts, id }) => {
-	useEffect(() => {}, [renderProducts]);
+	const { price, brand } = useContext(Products);
+	const [resultProducts, setResultproducts] = useState(renderProducts);
+	useEffect(() => {
+		if (price.lowest !== "" && price.highest !== "") {
+			setResultproducts(
+				[...renderProducts].filter((product) => {
+					if (
+						product.price > price.lowest && price.highest
+							? product.price < price.highest
+							: null
+					) {
+						return product;
+					}
+				}),
+			);
+		} else {
+			setResultproducts(renderProducts);
+		}
+		if (brand !== "") {
+			setResultproducts(
+				[...resultProducts].filter((product) =>
+					product.brand === brand ? product : null,
+				),
+			);
+		} else {
+			setResultproducts(renderProducts);
+		}
+		console.log(price.highest, price.lowest);
+	}, [renderProducts, brand, price]);
+
+	useEffect(() => {
+		setResultproducts(renderProducts);
+	}, []);
 	return (
 		<section className='gallery'>
-			{renderProducts.map((product) => (
+			{resultProducts.map((product) => (
 				<ProductItem
 					key={product.id}
-					id={product.id}
 					title={product.title}
 					price={Number(product.price).toFixed(2)}
 					image={product.thumbnail}
