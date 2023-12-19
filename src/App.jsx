@@ -23,6 +23,8 @@ import Splashscreen from "./pages/splashscreen/Splashscreen";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
+import Search from "./components/search/Search";
+import ProduktList from "./components/productlist/ProductList";
 
 function App() {
 	const productContext = useContext(Products);
@@ -62,11 +64,12 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Splashscreen/>}/>
 				<Route path="/onboarding" element={<Onboarding/>}/>
+				<Route path="/productlist/:id" element={<ProduktList/>}/>
 				<Route path="/home" element={<Home/>}/>
 				<Route path="/product-details/:id" element={<ProductDetails />}/>
 			</Routes>
 		</Products.Provider>
 	);
-}
+}	
 
 export default App;
