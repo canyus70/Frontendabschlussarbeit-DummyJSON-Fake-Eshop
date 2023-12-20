@@ -14,7 +14,8 @@
 		width: 90%;
 		margin: 0 auto;
 		aspect-ratio: 1 / 1;
-		object-fit: contain;
+		object-fit: cover;
+		object-position: center;
 	}
 	h4,
 	h3,
@@ -23,29 +24,60 @@
 		font-size: 0.7rem;
 		color: gray;
 	}
-	.rating_productitem{
+	.rating_productitem {
 		display: flex;
 		margin-top: 1vh;
+		align-items: center;
 	}
 
 	h2 {
+
+		font-size: 1.8vh;
+
 		font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
-		font-size: 0.9rem;
+	
+
 		color: black;
 		margin-bottom: 14%;
 	}
 	h3 {
-		font-size: 0.9rem;
+		font-size: 2vh;
 		color: var(--select);
 	}
-	div {
+	.priceContainer {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		position: absolute;
-		bottom: 2%;
+		bottom: -6%;
 		left: 0;
 		right: 0;
 		padding-inline: 5%;
+		height: 8vh;
+	}
+	.addButton {
+		width: 3.5vh;
+		position: relative;
+		bottom: 3%;
+	}
+}
+
+@media (min-width: 900px) {
+	.productItem {
+		h4 {
+			font-size: 1.2vw;
+		}
+		h3 {
+			font-size: 1.3rem;
+		}
+		h2 {
+			font-size: 1.2vw;
+		}
+	}
+	.priceContainer {
+		bottom: -1% !important;
+	}
+	.addButton {
+		width: 5vh !important;
 	}
 }

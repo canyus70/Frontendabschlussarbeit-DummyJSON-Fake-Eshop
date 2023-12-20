@@ -62,16 +62,18 @@ const SlideIn = () => {
 					</p>
 				</div>
 			</article>
-			<button
-				className='addFilterBtn'
-				onClick={() => setSlide(!slide)}>
-				Apply Filter
-			</button>
-			<button
-				className='addFilterBtn'
-				onClick={() => resetFilter()}>
-				Reset Filter
-			</button>
+			<div className='btnWrapper'>
+				<button
+					className='addFilterBtn'
+					onClick={() => setSlide(!slide)}>
+					Apply Filter
+				</button>
+				<button
+					className='addFilterBtn'
+					onClick={() => resetFilter()}>
+					Reset Filter
+				</button>
+			</div>
 		</section>
 	);
 };
