@@ -41,6 +41,7 @@ const Gallery = ({ renderProducts, id }) => {
 		<section className='gallery'>
 			{resultProducts.map((product) => (
 				<ProductItem
+					product={product}
 					key={product.id}
 					title={product.title}
 					price={Number(product.price).toFixed(2)}

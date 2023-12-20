@@ -25,6 +25,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
 import Search from "./components/search/Search";
 import ProduktList from "./components/productlist/ProductList";
+import Cart from "./components/cart/Cart";
 
 function App() {
 	const productContext = useContext(Products);
@@ -44,6 +45,7 @@ function App() {
 	const [slide, setSlide] = useState(false);
 	const [price, setPrice] = useState({ lowest: "", highest: "" });
 	const [brand, setBrand] = useState("");
+	const [warenkorb, setWarenkorb] = useState([]);
 
 	const contextObject = {
 		products,
@@ -66,6 +68,8 @@ function App() {
 		setPrice,
 		brand,
 		setBrand,
+		warenkorb, 
+		setWarenkorb
 	};
 
 	return (
@@ -91,6 +95,7 @@ function App() {
 					path='/product-details/:id'
 					element={<ProductDetails />}
 				/>
+				<Route path="/cart" element={<Cart/>}/>
 			</Routes>
 		</Products.Provider>
 	);

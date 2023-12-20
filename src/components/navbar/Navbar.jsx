@@ -12,6 +12,7 @@ const Navbar
          <div className="toggleContainer_Navbar">
             <div className="toggle_Navbar"></div>
          </div>
+         <div><Link to="/cart">Warenkorb</Link></div>
       </nav>
      );
 }
