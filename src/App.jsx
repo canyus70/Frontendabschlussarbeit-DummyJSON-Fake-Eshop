@@ -52,7 +52,7 @@ function App() {
 	const [brand, setBrand] = useState("");
 
 	const [favorites, setFavorites] = useState([]);
-
+	
 	const [warenkorb, setWarenkorb] = useState([]);
 
 	const contextObject = {
@@ -78,12 +78,11 @@ function App() {
 		setPrice,
 		brand,
 		setBrand,
-
 		favorites,
 		setFavorites,
-
 		warenkorb,
 		setWarenkorb,
+		
 	};
 
 	return (
@@ -113,6 +112,10 @@ function App() {
 					<Route
 						path='/favorites'
 						element={<Favorites />}
+					/>
+					<Route
+						path='/cart'
+						element={<Cart />}
 					/>
 				</Routes>
 			</div>

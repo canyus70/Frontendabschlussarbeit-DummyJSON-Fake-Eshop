@@ -26,7 +26,7 @@ const Home = () => {
 			<h1>Find your favorite Product</h1>
 			<Search />
 			<CategoryBar />
-			<div>
+			<div className='title'>
 				<h3>popular</h3>
 				<Link to={`/productlist/${Allproducts}`}>
 					<h3>All Products</h3>
