@@ -72,8 +72,8 @@ const ProductDetails = () => {
                             </div>
                             <p className="rating_details"> <Star /> {product.rating}</p>
                             <div className="secondFlex_wrap_details">
-                                <p>{product.stock} pieces in stock</p>
-                                <h4>$ {product.price}.00</h4>
+                                <p className="stock_details">{product.stock} pieces in stock</p>
+                                <h4 className="price_details">$ {product.price}.00</h4>
                             </div>
                         </article>
                     </div>

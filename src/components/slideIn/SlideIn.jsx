@@ -17,7 +17,7 @@ const SlideIn = () => {
 	const All = "all";
 
 	const resetFilter = () => {
-		setPrice("");
+		setPrice({ lowest: "", highest: "" });
 		setBrand("");
 		setSlide(!slide);
 		navigate(`/productlist/${All}`);
