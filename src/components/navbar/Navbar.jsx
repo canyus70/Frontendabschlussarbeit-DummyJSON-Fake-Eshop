@@ -17,24 +17,21 @@ const Navbar = () => {
       }
    }
 
-   console.log(changeMode.darkmode)
-
     return ( 
       <nav className="nav_Navbar">
          <Link to="/home">
             <img className="homeButton_Navbar" src={HomeButton} alt="HomeButton" />
          </Link>
+         <div>
+            <Link to="/cart">Warenkorb</Link>
+         </div>
+         <div>
+            <Link to='/favorites'> <Heart /> </Link>
+         </div>
          <div onClick={modeChange} className="toggleContainer_Navbar">
             <div className={`toggle_Navbar ${changeMode.darkmode ? "dark" : ""}`}></div>
             <div className="toggleBackground_NBavbar"></div>
          </div>
-
-         <div>
-            <Link to='/favorites'> <Heart /> </Link>
-         </div>
-
-         <div><Link to="/cart">Warenkorb</Link></div>
-
       </nav>
      );
 }
