@@ -114,6 +114,10 @@ function App() {
 						path='/favorites'
 						element={<Favorites />}
 					/>
+					<Route
+						path='/cart'
+						element={<Cart />}
+					/>
 				</Routes>
 			</div>
 		</Products.Provider>
