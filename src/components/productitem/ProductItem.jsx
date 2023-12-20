@@ -16,7 +16,7 @@ const ProductItem = ({ id, product, title, price, image, rating }) => {
 
 	return (
 		<article className='productItem'>
-			<Link to={`/product-details/${id}`}>
+			<Link className="productinfoLink_ProductItem" to={`/product-details/${id}`}>
 				<img
 					src={image}
 					alt=''

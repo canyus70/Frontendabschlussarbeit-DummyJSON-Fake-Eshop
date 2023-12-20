@@ -2,7 +2,10 @@
     // kompletter wrapper der Detailpage
     padding: 5%;
     padding-bottom: 20vh;
-    background-color: var(--backgroundItem);
+    background-color: var(--background);
+    @media (min-width: 576px){
+        text-align: center;
+    }
 
     .header_wrap_details{
         margin-top: 3vh;
@@ -40,7 +43,7 @@
             border-top-left-radius: 24px;
         }
         .info_wrap_details{
-            background-color: inherit;
+            background-color: var(--backgroundItem);
             padding: 5%;
             border-bottom-left-radius: 24px;
             border-bottom-right-radius: 24px;
@@ -48,6 +51,7 @@
             .firstFlex_wrap_details{
                 display: flex;
                 justify-content: space-between;
+                text-align: left;
 
                 .quantityCounter_wrap_details{
                     display: flex;
@@ -84,14 +88,19 @@
                 margin-top: 0.5vh;
                 margin-bottom: 2vh;
                 display: flex;
+                align-items: center;
             }
             .secondFlex_wrap_details{
                 display: flex;
                 justify-content: space-between;
                 align-items: baseline;
-                h4 {
+                .stock_details{
+                    color: #B9C1CC;
+                }
+                .price_details {
                     font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
                     font-size: 1.75rem;
+                    color: var(--select);
                 }
             }
         }
@@ -100,11 +109,13 @@
     .descriptionHeadline_details{
         margin-top: 3vh;
         margin-bottom: 1.5vh;
+        text-align: left;
     }
     .description_details {
         font-size: 1rem;
         line-height: 1.25rem;
-        margin-bottom: 2vh;
+        margin-bottom: 4vh;
+        text-align: left;
     }
     .addToCart{
         font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
@@ -117,6 +128,10 @@
         &:hover{
             background-color: var(--selectSelected);
             cursor: pointer;
+        }
+        @media (min-width: 576px){
+            width: 500px;
+            padding: 24px 48px;
         }
     }
 }
