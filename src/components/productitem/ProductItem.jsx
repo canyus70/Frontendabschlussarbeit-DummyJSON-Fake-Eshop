@@ -4,6 +4,7 @@ import Frame from "../../../public/img/Frame.svg";
 import Framecopy from "../../../public/img/Framecopy.svg";
 import { useContext } from "react";
 import { Products } from "./../../context/Context";
+import Star from "../svg/Star";
 
 const ProductItem = ({ id, title, price, image, rating }) => {
 
@@ -17,7 +18,7 @@ const ProductItem = ({ id, title, price, image, rating }) => {
 					alt=''
 					className='productImage'
 				/>
-				<h4>⭐ {rating}</h4>
+				<h4 className="rating_productitem"><Star /> {rating}</h4>
 				<h2>{title}</h2>
 			</Link>
 			<div>

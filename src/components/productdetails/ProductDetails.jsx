@@ -12,9 +12,9 @@ import HeartFilled from "../svg/HeartFilled";
 const ProductDetails = () => {
     const [count, setCount] = useState(1);
     const [favorite, setFavorite] = useState(false);
-    const [favoritesDB, setFavoritesDB] = useState([]);
+    // const [favoritesDB, setFavoritesDB] = useState([]);
 
-    const context = useContext(Products);
+    const { products, favorites, setFavorites } = useContext(Products);
 
     const path = useParams();
     const completePath = path.id;
@@ -23,11 +23,13 @@ const ProductDetails = () => {
     const navigate = useNavigate();
 
     // Array Kopie aller Products, um in Filterfunktion das passende Produkt rendern zu können:
-    const productArr = [...context.products];
+    const productArr = [...products];
 
     const filteredProductDetail = productArr.filter((singleProductObj) => {
         return singleProductObj.id.toString() === completePath.toString();
     })
+
+    console.log(filteredProductDetail);
 
     // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
@@ -40,6 +42,12 @@ const ProductDetails = () => {
         }
     }
 
+    const addToFavorites = (object) => {
+        setFavorite(!favorite);
+        setFavorites([...favorites, object])
+        console.log('onclick', favorites);
+    }
+ 
 
     return ( 
         <>
@@ -48,7 +56,7 @@ const ProductDetails = () => {
                     <div className="header_wrap_details">
                         <div className="leftArrow_wrap_details" onClick={() => navigate(-1)}> <LeftArrow /> </div>
                         <h2 className="headerTitle_details">{product.title}</h2>
-                        <div className="heart_wrap_details" onClick={() => setFavorite(!favorite)}> {favorite ? <HeartFilled /> : <Heart />} </div>
+                        <div className="heart_wrap_details" onClick={() => addToFavorites(product)}> {favorite ? <HeartFilled /> : <Heart />} </div>
                     </div>
                     
                     <div className="detailCard_wrap_details">
