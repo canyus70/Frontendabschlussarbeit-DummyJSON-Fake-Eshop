@@ -78,10 +78,8 @@ function App() {
 		setPrice,
 		brand,
 		setBrand,
-
 		favorites,
 		setFavorites,
-
 		warenkorb,
 		setWarenkorb,
 	};

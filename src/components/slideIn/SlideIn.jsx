@@ -24,8 +24,8 @@ const SlideIn = () => {
 	};
 
 	useEffect(() => {
-		console.log(price);
-		console.log(brand);
+		// console.log(price);
+		// console.log(brand);
 	}, [slide, price, brand]);
 	return (
 		<section className={slide ? "slideAktive slide" : "slide"}>

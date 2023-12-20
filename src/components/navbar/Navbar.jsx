@@ -22,8 +22,9 @@ const Navbar = () => {
          <Link to="/home">
             <img className="homeButton_Navbar" src={HomeButton} alt="HomeButton" />
          </Link>
-         <div>
+         <div className="cartContainer_Navbar">
             <Link to="/cart">Warenkorb</Link>
+            <div className="cartCounter_Navbar">{changeMode.warenkorb.length}</div>
          </div>
          <div>
             <Link to='/favorites'> <Heart /> </Link>

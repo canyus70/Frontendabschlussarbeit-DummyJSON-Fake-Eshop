@@ -31,7 +31,7 @@ const Gallery = ({ renderProducts, id }) => {
 		} else {
 			setResultproducts(renderProducts);
 		}
-		console.log(price.highest, price.lowest);
+		// console.log(price.highest, price.lowest);
 	}, [renderProducts, brand, price]);
 
 	useEffect(() => {

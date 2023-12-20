@@ -9,11 +9,11 @@ import { Products } from "../../context/Context";
 
 const ProductItem = ({ id, product, title, price, image, rating }) => {
 	const {warenkorb, setWarenkorb}= useContext(Products)
-	console.log(warenkorb,setWarenkorb)
+	// console.log(warenkorb,setWarenkorb)
 
 	const addToCart = () => {
 		setWarenkorb([...warenkorb, product] )
-		console.log(warenkorb)
+		// console.log(warenkorb)
 	}
 
 	const changeIcon = useContext(Products)
