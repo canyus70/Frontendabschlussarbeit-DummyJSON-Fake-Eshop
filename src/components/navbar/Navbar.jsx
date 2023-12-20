@@ -4,6 +4,7 @@ import "./Navbar.scss"
 import { useContext } from "react";
 import { Products } from "./../../context/Context";
 import Heart from "../svg/Heart";
+import CartIcon from "../svg/CartIcon";
 
 const Navbar = () => {
 
@@ -23,7 +24,7 @@ const Navbar = () => {
             <img className="homeButton_Navbar" src={HomeButton} alt="HomeButton" />
          </Link>
          <div>
-            <Link to="/cart">Warenkorb</Link>
+            <Link to="/cart"> <CartIcon/></Link>
          </div>
          <div>
             <Link to='/favorites'> <Heart /> </Link>
