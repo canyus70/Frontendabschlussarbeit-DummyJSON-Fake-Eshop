@@ -11,10 +11,9 @@ import HeartFilled from "../svg/HeartFilled";
 
 const ProductDetails = () => {
     const [count, setCount] = useState(1);
-    const [favorite, setFavorite] = useState(false);
-    // const [favoritesDB, setFavoritesDB] = useState([]);
+    const [favoriteSelected, setFavoriteSelected] = useState(false);
 
-    const { products, favorites, setFavorites } = useContext(Products);
+    const { products, favorites, setFavorites, warenkorb, setWarenkorb } = useContext(Products);
 
     const path = useParams();
     const completePath = path.id;
@@ -29,8 +28,6 @@ const ProductDetails = () => {
         return singleProductObj.id.toString() === completePath.toString();
     })
 
-    console.log(filteredProductDetail);
-
     // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
         setCount(count + 1)
@@ -43,10 +40,13 @@ const ProductDetails = () => {
     }
 
     const addToFavorites = (object) => {
-        setFavorite(!favorite);
+        setFavoriteSelected(!favoriteSelected);
         setFavorites([...favorites, object])
-        console.log('onclick', favorites);
     }
+
+    const addToCart = (object) => {
+		setWarenkorb([...warenkorb, object] )
+	}
  
 
     return ( 
@@ -56,7 +56,7 @@ const ProductDetails = () => {
                     <div className="header_wrap_details">
                         <div className="leftArrow_wrap_details" onClick={() => navigate(-1)}> <LeftArrow /> </div>
                         <h2 className="headerTitle_details">{product.title}</h2>
-                        <div className="heart_wrap_details" onClick={() => addToFavorites(product)}> {favorite ? <HeartFilled /> : <Heart />} </div>
+                        <div className="heart_wrap_details" onClick={() => addToFavorites(product)}> {favoriteSelected ? <HeartFilled /> : <Heart />} </div>
                     </div>
                     
                     <div className="detailCard_wrap_details">
@@ -79,7 +79,7 @@ const ProductDetails = () => {
                     </div>
                     <h2 className="descriptionHeadline_details">Description</h2>
                     <p className="description_details">{product.description}</p>
-                    <button className="addToCart">Add to Cart</button>
+                    <button className="addToCart" onClick={() => addToCart(product)}>Add to Cart</button>
                 </article>
             ))}
             <Navbar/>

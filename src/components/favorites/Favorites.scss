@@ -5,9 +5,14 @@
         padding-bottom: 15vh;
         h2 {
         margin-block: 2vh;
-    }
+        }
+        .singleFavoriteItem_wrap{
+            display: grid;
+            grid-template-columns: 6fr 1fr;
+            gap: 12px;
+        }
     .productItem{
-        margin-bottom: 2vh;
+        margin-bottom: 4vh;
     }
     }
     
