@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Products } from "../../context/Context";
 import ProductItem from "../productitem/ProductItem";
+import Navbar from "../navbar/Navbar";
 
 
 const Cart = () => {
@@ -19,7 +20,7 @@ console.log(warenkorb)
         rating={product.rating}
     />
     ))):  (<p>Cart is Empty</p>)  }
-    
+    <Navbar />
 </section>     );
 }
  
