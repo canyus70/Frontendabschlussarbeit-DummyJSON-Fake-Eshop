@@ -38,21 +38,24 @@ const Search = () => {
 	}, [searchInput]);
 
 	return (
-		<form
-			className='search'
-			onSubmit={search}>
-			<input
-				type='text'
-				placeholder='Search...'
-				onChange={(e) => setSearchInput(e.target.value)}
-			/>
-
-			<img
-				src={Filter}
-				alt=''
-				onClick={() => setSlide(!slide)}
-			/>
-		</form>
+		<section className='searchWrapper'>
+			<form
+				className='search'
+				onSubmit={search}>
+				<input
+					type='text'
+					placeholder='Search...'
+					onChange={(e) => setSearchInput(e.target.value)}
+				/>
+			</form>
+			<section className='imageHolder'>
+				<img
+					src={Filter}
+					alt=''
+					onClick={() => setSlide(!slide)}
+				/>
+			</section>
+		</section>
 	);
 };
 

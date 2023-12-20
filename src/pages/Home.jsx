@@ -17,7 +17,6 @@ const Home = () => {
 	const Allproducts = "all";
 	const slide = context.slide;
 	const setSlide = context.setSlide;
-
 	return (
 		<main className='galleryContainer_Home'>
 			<SlideIn

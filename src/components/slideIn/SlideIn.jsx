@@ -46,16 +46,20 @@ const SlideIn = () => {
 				<h3>Brands</h3>
 				<div>
 					<p onClick={(e) => setBrand(e.target.innerText)}>Apple</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Nike</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>adidas</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Lenovo</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Sony</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Nescafé</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Dior</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Lego</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Braun</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>L’Oreal</p>
-					<p onClick={(e) => setBrand(e.target.innerText)}>Zara</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>Samsung</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>OPPO</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>Huawei</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>
+						LouisWill
+					</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>Infinix</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>Darojay</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>Xiangle</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>DADAWU</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>YIOSI</p>
+					<p onClick={(e) => setBrand(e.target.innerText)}>
+						JIEPOLLY
+					</p>
 				</div>
 			</article>
 			<button
