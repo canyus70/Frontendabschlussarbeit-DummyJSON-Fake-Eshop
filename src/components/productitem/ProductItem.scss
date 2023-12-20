@@ -1,83 +1,75 @@
 .productItem {
 	background-color: var(--backgroundItem);
 	padding: 5%;
+	padding-bottom: 0px;
 	border-radius: 12px;
 	text-align: left;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	box-shadow: 0 0 4px 1px rgb(124, 124, 124);
-	.productImage {
-		border-radius: 8px;
-		margin-bottom: 0.7vh;
-		background-color: var(--backgroundItem);
-		width: 90%;
-		margin: 0 auto;
-		aspect-ratio: 1 / 1;
-		object-fit: cover;
-		object-position: center;
-	}
-	h4,
-	h3,
-	h2 {
-		margin-bottom: 0.8vh;
-		font-size: 0.7rem;
-		color: gray;
-	}
-	.rating_productitem {
-		display: flex;
-		margin-top: 1vh;
-		align-items: center;
-	}
-
-	h2 {
-
-		font-size: 1.8vh;
-
-		font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
-	
-
-		color: black;
-		margin-bottom: 14%;
-	}
-	h3 {
-		font-size: 2vh;
-		color: var(--select);
+	.productinfoLink_ProductItem {
+		border-bottom: 1px solid grey;
+		position: relative;
+		.productImage {
+			border-radius: 8px;
+			margin-bottom: 0.7vh;
+			background-color: var(--backgroundItem);
+			width: 100%;
+			margin: 0 auto;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+			object-position: center;
+		}
+		.rating_productitem {
+			margin-bottom: 0.8vh;
+			font-size: 2vh;
+			color: var(--color);
+			display: flex;
+			margin-top: 1vh;
+			align-items: center;
+			position: absolute;
+			bottom: -0.8vh;
+			right: 0;
+			@media (min-width: 900px) {
+				font-size: 1.2vw;
+			}
+		}
+		h2 {
+			font-size: 1.8vh;
+			font-family: "PoppinsReg", Arial, Helvetica, sans-serif;
+			display: block;
+			height: 7.7vh;
+			color: var(--color);
+			padding-top: 0.5vh;
+			line-height: 1.2;
+			@media (min-width: 900px) {
+				font-size: 2vh;
+			}
+		}
 	}
 	.priceContainer {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		position: absolute;
 		bottom: -6%;
 		left: 0;
 		right: 0;
-		padding-inline: 5%;
-		height: 8vh;
-	}
-	.addButton {
-		width: 3.5vh;
-		position: relative;
-		bottom: 3%;
-	}
-}
-
-@media (min-width: 900px) {
-	.productItem {
-		h4 {
-			font-size: 1.2vw;
-		}
+		padding-block: 4%;
 		h3 {
-			font-size: 1.3rem;
+			font-size: 0.7rem;
+			color: gray;
+			font-size: 2vh;
+			color: var(--select);
+			@media (min-width: 900px) {
+				font-size: 1.3rem;
+			}
 		}
-		h2 {
-			font-size: 1.2vw;
+		.addButton {
+			width: 3.5vh;
+			@media (min-width: 900px) {
+				width: 5vh
+			}
 		}
-	}
-	.priceContainer {
-		bottom: -1% !important;
-	}
-	.addButton {
-		width: 5vh !important;
 	}
 }

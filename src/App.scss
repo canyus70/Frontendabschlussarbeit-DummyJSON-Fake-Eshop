@@ -17,17 +17,19 @@ img {
 :root {
     --background: #f5f5f5;
     --color: black;
-    --backgroundItem: white;
+    --backgroundItem: rgba(255, 255, 255, 0.503);
     --select: #364FD4;
     --selectSelected: #2a3da8;
+
 }
 
 .darkmode {
-    --background: rgb(25, 25, 25);
-    --color: white;
-    --backgroundItem: rgb(80, 80, 80);
-    --select: tomato;
-    --selectSelected: rgb(179, 74, 55);
+    --background: #001524;
+    --color: #ffecd1;
+    --backgroundItem: #15616d84;
+    --select: #ff7d00;
+    --selectSelected: #78290f;
+
 }
 
 @font-face {
