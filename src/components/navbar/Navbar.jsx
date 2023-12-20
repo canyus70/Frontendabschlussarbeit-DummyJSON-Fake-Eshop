@@ -3,6 +3,7 @@ import HomeButton from "./../../assets/images/navbar/Home.svg";
 import "./Navbar.scss"
 import { useContext } from "react";
 import { Products } from "./../../context/Context";
+import Heart from "../svg/Heart";
 
 const Navbar = () => {
 
@@ -27,7 +28,13 @@ const Navbar = () => {
             <div className={`toggle_Navbar ${changeMode.darkmode ? "dark" : ""}`}></div>
             <div className="toggleBackground_NBavbar"></div>
          </div>
+
+         <div>
+            <Link to='/favorites'> <Heart /> </Link>
+         </div>
+
          <div><Link to="/cart">Warenkorb</Link></div>
+
       </nav>
      );
 }

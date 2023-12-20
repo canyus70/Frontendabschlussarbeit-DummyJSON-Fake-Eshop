@@ -3,6 +3,10 @@ import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
 
 import { useContext } from "react";
+
+
+import Star from "../svg/Star";
+
 import { Products } from "../../context/Context";
 
 
@@ -19,6 +23,7 @@ const ProductItem = ({ product, title, price, image, rating }) => {
 import Framecopy from "../../../public/img/Framecopy.svg";
 
 
+
 const ProductItem = ({ id, title, price, image, rating }) => {
 
 	const changeIcon = useContext(Products)
@@ -32,7 +37,7 @@ const ProductItem = ({ id, title, price, image, rating }) => {
 					alt=''
 					className='productImage'
 				/>
-				<h4>⭐ {rating}</h4>
+				<h4 className="rating_productitem"><Star /> {rating}</h4>
 				<h2>{title}</h2>
 			</Link>
 			<div>

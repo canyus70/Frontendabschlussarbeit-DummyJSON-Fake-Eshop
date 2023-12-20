@@ -21,11 +21,19 @@
             // text-align: center;
             max-width: 80%;
             margin: 0 auto;
+            display: inline-block;
+        }
+        .heart_wrap_details{
+            position: absolute;
+            right: 0;
+            top: 0;
+            
         }
     }
     
     .detailCard_wrap_details{
-        
+        max-width: 500px;
+        margin: 0 auto;
         img {
             max-width: 100%;
             display: block;
