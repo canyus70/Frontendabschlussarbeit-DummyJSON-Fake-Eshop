@@ -1,122 +1,123 @@
 .container_Onbaording {
-    background-color: var(--background);
-    height: 100vh;
-    padding-top: 100px;
-    .imageContainer_Onboarding {
-        overflow: clip;
-        margin: 0 auto;
-        width: 430px;
-        height: 430px;
-        position: relative;
-        
-        .cloud1_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 30%;
-            left: 0%;
-            width: 30%;
-        }
-        .cloud2_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 30%;
-            left: 75%;
-            width: 20%;
-        }
-        .cloud3_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 15%;
-            left: 75%;
-            width: 30%;
-        }
-        .vaseLeft_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 65%;
-            left: 10%;
-        }
-        .bag_Onbaording {
-            position: absolute;
-            z-index: 5;
-            top: 75%;
-            left: 70%;
-        }
-        .box_Onbaording {
-            position: absolute;
-            z-index: 4;
-            top: 80%;
-            left: 60%;
-        }
-        .chair_Onbaording {
-            position: absolute;
-            z-index: 4;
-            top: 75%;
-            left: 28%;
-        }
-        .person_Onbaording{
-            position: absolute;
-            z-index: 4;
-            left: 10%;
-            top: 55%;
-        }
-        .phone_Onbaording {
-            position: absolute;
-            z-index: 3;
-            left: 50%;
-            top: 55%;
-            width: 35%;
-            transform: translate(-50%, -50%);
-        }
-        .vaseRight_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 60%;
-            left: 65%;
-        }
-        .plant1_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 55%;
-            left: 90%;
-        }
-        .plant2_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 50%;
-            left: 0%;
-        }
-        .plant3_Onbaording {
-            position: absolute;
-            z-index: 2;
-            top: 55%;
-            left: 0%;
-        }
-        .background_Onbaording {
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-        }
-    }
-    .containerText_Onbaording {
-        text-align: center;
-        .h2_Onbaording {
-            margin-top: 50px;
-        }
-        .p_Onboarding {
-            margin-block: 30px;
-        }
-        .linkButton_Onbaording {
-            display: block;
-            text-align: center;
-            margin: 100px auto 0 auto;
-            text-decoration: none;
-            color: white;
-            background-color: var(--select);
-            padding-block: 6px;
-            border-radius: 9px;
-            width: 167px;
-        }
-    }
+	max-height: 100vh;
+	overflow: hidden;
+	.imageContainer_Onboarding {
+		overflow: clip;
+		margin: 20px auto 0 auto;
+		width: 430px;
+		height: 430px;
+		position: relative;
+
+		.cloud1_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 30%;
+			left: 0%;
+			width: 30%;
+		}
+		.cloud2_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 30%;
+			left: 75%;
+			width: 20%;
+		}
+		.cloud3_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 15%;
+			left: 75%;
+			width: 30%;
+		}
+		.vaseLeft_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 65%;
+			left: 10%;
+		}
+		.bag_Onbaording {
+			position: absolute;
+			z-index: 5;
+			top: 75%;
+			left: 70%;
+		}
+		.box_Onbaording {
+			position: absolute;
+			z-index: 4;
+			top: 80%;
+			left: 60%;
+		}
+		.chair_Onbaording {
+			position: absolute;
+			z-index: 4;
+			top: 75%;
+			left: 28%;
+		}
+		.person_Onbaording {
+			position: absolute;
+			z-index: 4;
+			left: 10%;
+			top: 55%;
+		}
+		.phone_Onbaording {
+			position: absolute;
+			z-index: 3;
+			left: 50%;
+			top: 55%;
+			width: 35%;
+			transform: translate(-50%, -50%);
+		}
+		.vaseRight_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 60%;
+			left: 65%;
+		}
+		.plant1_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 55%;
+			left: 90%;
+		}
+		.plant2_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+			left: 0%;
+		}
+		.plant3_Onbaording {
+			position: absolute;
+			z-index: 2;
+			top: 55%;
+			left: 0%;
+		}
+		.background_Onbaording {
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.containerText_Onbaording {
+		text-align: center;
+		.h2_Onbaording {
+			margin-top: 10px;
+		}
+		.p_Onboarding {
+			margin-block: 20px;
+			max-width: 80vw;
+			margin-inline: auto;
+		}
+		.linkButton_Onbaording {
+			display: block;
+			text-align: center;
+			margin: 40px auto 0 auto;
+			text-decoration: none;
+			color: white;
+			background-color: #364fd4;
+			padding-block: 6px;
+			border-radius: 9px;
+			width: 167px;
+		}
+	}
 }

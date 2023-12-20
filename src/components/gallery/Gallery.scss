@@ -1,6 +1,11 @@
 .gallery {
 	padding: 2.5%;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20vh, 1fr));
 	gap: 2vh;
+}
+@media (min-width: 900px) {
+	.gallery {
+		grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+	}
 }
