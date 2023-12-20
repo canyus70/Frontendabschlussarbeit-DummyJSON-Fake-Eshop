@@ -20,8 +20,8 @@ const favorites = () => {
             <section className="new_wrap_favorites">
             <h2>Your desired products</h2>
             {favorites.length !== 0 ? (
-                favorites.map((product) => (
-                    <div className="singleFavoriteItem_wrap">
+                favorites.map((product, index) => (
+                    <div className="singleFavoriteItem_wrap" key={index}>
                         
                         <ProductItem
 					id={product.id}
