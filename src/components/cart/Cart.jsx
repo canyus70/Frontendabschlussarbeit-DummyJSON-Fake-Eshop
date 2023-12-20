@@ -19,7 +19,7 @@ console.log(warenkorb)
         image={product.thumbnail}
         rating={product.rating}
     />
-    ))):  (<p>Cart is Empty</p>)  }
+    ))):  (<p>Your Cart is Empty</p>)  }
     <Navbar />
 </section>     );
 }
