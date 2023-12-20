@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
+
 import { useContext } from "react";
 import { Products } from "../../context/Context";
 
@@ -15,9 +16,17 @@ const ProductItem = ({ product, title, price, image, rating }) => {
 	}
 
 
+import Framecopy from "../../../public/img/Framecopy.svg";
+
+
+const ProductItem = ({ id, title, price, image, rating }) => {
+
+	const changeIcon = useContext(Products)
+
+
 	return (
 		<article className='productItem'>
-			<Link onClick={(e) => console.log("product")}>
+			<Link to={`/product-details/${id}`}>
 				<img
 					src={image}
 					alt=''
@@ -32,7 +41,7 @@ const ProductItem = ({ product, title, price, image, rating }) => {
 					className='addButton'
 					onClick={() => addToCart()}>
 					<img
-						src={Frame}
+						src={changeIcon.darkmode ? Framecopy : Frame}
 						alt='button for adding to cart'
 						className='addButton'
 					/>
