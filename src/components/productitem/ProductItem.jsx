@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import Star from "../svg/Star";
 import { Products } from "../../context/Context";
 
-const ProductItem = ({ id, product, title, price, image, rating }) => {
+const ProductItem = ({ count, id, product, title, price, image, rating }) => {
 
 	const {warenkorb, setWarenkorb}= useContext(Products)
 	const changeIcon = useContext(Products)
@@ -40,6 +40,7 @@ const ProductItem = ({ id, product, title, price, image, rating }) => {
 					/>
 				</Link>
 			</div>
+			<p>{count}</p>
 		</article>
 	);
 };
