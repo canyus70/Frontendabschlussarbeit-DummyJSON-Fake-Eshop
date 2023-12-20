@@ -2,20 +2,18 @@ import { Link } from "react-router-dom";
 import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
 import Framecopy from "../../../public/img/Framecopy.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Star from "../svg/Star";
 import { Products } from "../../context/Context";
 
 const ProductItem = ({ id, product, title, price, image, rating }) => {
-	const { warenkorb, setWarenkorb } = useContext(Products);
-	console.log(warenkorb, setWarenkorb);
+
+	const {warenkorb, setWarenkorb}= useContext(Products)
+	const changeIcon = useContext(Products)
 
 	const addToCart = () => {
-		setWarenkorb([...warenkorb, product]);
-		console.log(warenkorb);
-	};
-
-	const changeIcon = useContext(Products);
+		setWarenkorb([...warenkorb, product] )
+	}
 
 	return (
 		<article className='productItem'>

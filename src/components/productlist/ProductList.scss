@@ -1,5 +1,5 @@
 .productList {
-	background-color: #f5f5f5;
+	background-color: var(--background);
 	padding-block: 5%;
 	min-height: 100vh;
 	.sortandall {
@@ -12,7 +12,7 @@
 
 		select {
 			font-size: 2vh;
-			color: #364fd4;
+			color: var(--select);
 			border: none;
 			background: transparent;
 			-webkit-appearance: none;

@@ -23,8 +23,13 @@
 		}
 	}
 	.imageHolder {
-		background-color: #364fd4;
+
+
 		width: 5vh;
+
+		background-color: var(--select);
+
+
 		aspect-ratio: 1/1;
 		display: flex;
 		justify-content: center;
