@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
-import Framecopy from "../../../public/img/Framecopy.svg";
+
 import { useContext } from "react";
-import { Products } from "./../../context/Context";
+import { Products } from "../../context/Context";
+
+
+const ProductItem = ({ product, title, price, image, rating }) => {
+	const {warenkorb, setWarenkorb}= useContext(Products)
+	console.log(warenkorb,setWarenkorb)
+
+	const addToCart = () => {
+		setWarenkorb([...warenkorb, product] )
+		console.log(warenkorb)
+	}
+
+
+import Framecopy from "../../../public/img/Framecopy.svg";
+
 
 const ProductItem = ({ id, title, price, image, rating }) => {
 
 	const changeIcon = useContext(Products)
+
 
 	return (
 		<article className='productItem'>
@@ -24,7 +39,7 @@ const ProductItem = ({ id, title, price, image, rating }) => {
 				<h3>${Number(price).toFixed(2)}</h3>
 				<Link
 					className='addButton'
-					onClick={() => console.log("+")}>
+					onClick={() => addToCart()}>
 					<img
 						src={changeIcon.darkmode ? Framecopy : Frame}
 						alt='button for adding to cart'
