@@ -1,16 +1,13 @@
 import { Link } from "react-router-dom";
 import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
-
+import Framecopy from "../../../public/img/Framecopy.svg";
 import { useContext } from "react";
-
-
 import Star from "../svg/Star";
-
 import { Products } from "../../context/Context";
 
 
-const ProductItem = ({ product, title, price, image, rating }) => {
+const ProductItem = ({ id, product, title, price, image, rating }) => {
 	const {warenkorb, setWarenkorb}= useContext(Products)
 	console.log(warenkorb,setWarenkorb)
 
@@ -18,13 +15,6 @@ const ProductItem = ({ product, title, price, image, rating }) => {
 		setWarenkorb([...warenkorb, product] )
 		console.log(warenkorb)
 	}
-
-
-import Framecopy from "../../../public/img/Framecopy.svg";
-
-
-
-const ProductItem = ({ id, title, price, image, rating }) => {
 
 	const changeIcon = useContext(Products)
 
