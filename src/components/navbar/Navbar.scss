@@ -2,8 +2,9 @@
     position: fixed;
     bottom: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
     background-color: var(--backgroundItem);
     width: 100%;
     height: 60px;
