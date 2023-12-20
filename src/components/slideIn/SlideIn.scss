@@ -23,7 +23,7 @@
 			gap: 1vh;
 
 			p {
-				background-color: white;
+				background-color: var(--background);
 				padding: 2%;
 				border-radius: 4px;
 				box-shadow: 0 0 2px 1px black;
@@ -33,7 +33,7 @@
 	.addFilterBtn {
 		width: 80%;
 		border: none;
-		background-color: #364fd4;
+		background-color: var(--select);
 		color: white;
 		font-size: 1.5rem;
 		padding-block: 2%;
