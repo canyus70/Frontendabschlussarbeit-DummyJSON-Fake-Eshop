@@ -28,9 +28,13 @@ const Navbar = () => {
             <div className={`toggle_Navbar ${changeMode.darkmode ? "dark" : ""}`}></div>
             <div className="toggleBackground_NBavbar"></div>
          </div>
+
          <div>
             <Link to='/favorites'> <Heart /> </Link>
          </div>
+
+         <div><Link to="/cart">Warenkorb</Link></div>
+
       </nav>
      );
 }

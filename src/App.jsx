@@ -25,7 +25,11 @@ import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
 import Search from "./components/search/Search";
 import ProduktList from "./components/productlist/ProductList";
+
 import Favorites from "./components/favorites/Favorites";
+
+import Cart from "./components/cart/Cart";
+
 
 function App() {
 	const productContext = useContext(Products);
@@ -47,7 +51,11 @@ function App() {
 	const [slide, setSlide] = useState(false);
 	const [price, setPrice] = useState({ lowest: "", highest: "" });
 	const [brand, setBrand] = useState("");
+
 	const [favorites, setFavorites] = useState([]);
+
+	const [warenkorb, setWarenkorb] = useState([]);
+
 
 	const contextObject = {
 		products,
@@ -72,12 +80,42 @@ function App() {
 		setPrice,
 		brand,
 		setBrand,
+
 		favorites,
-		setFavorites
+		setFavorites,
+
+		warenkorb, 
+		setWarenkorb
+
 	};
 
 	return (
 		<Products.Provider value={contextObject}>
+
+			<Routes>
+				<Route
+					path='/'
+					element={<Splashscreen />}
+				/>
+				<Route
+					path='/onboarding'
+					element={<Onboarding />}
+				/>
+				<Route
+					path='/productlist/:id'
+					element={<ProduktList />}
+				/>
+				<Route
+					path='/home'
+					element={<Home />}
+				/>
+				<Route
+					path='/product-details/:id'
+					element={<ProductDetails />}
+				/>
+				<Route path="/cart" element={<Cart/>}/>
+			</Routes>
+
 			<div className={`appContainer_App ${darkmode ? "darkmode" : ""}`}>
 				<Routes>
 					<Route path="/" element={<Splashscreen/>}/>
@@ -88,6 +126,7 @@ function App() {
 					<Route path="/favorites" element={<Favorites />}/>
 				</Routes>
 			</div>
+
 		</Products.Provider>
 	);
 }
