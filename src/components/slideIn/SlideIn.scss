@@ -27,13 +27,13 @@
 			gap: 1vh;
 
 			p {
-				background-color: white;
+				background-color: var(--backgroundItem);
 				padding: 4% 2%;
 				border-radius: 4px;
 				box-shadow: 0 0 2px 1px black;
 				&:active {
-					background-color: #364fd4;
-					color: white;
+					background-color: var(--select);
+					color: var(--color);
 				}
 			}
 		}
@@ -41,7 +41,7 @@
 	.addFilterBtn {
 		width: 30vw;
 		border: none;
-		background-color: #364fd4;
+		background-color: var(--select);
 		color: white;
 		font-size: 3vw;
 		padding-block: 2vh;
@@ -74,14 +74,14 @@
 				padding-inline: 5%;
 
 				p {
-					background-color: white;
+					background-color: var(--backgroundItem);
 					padding: 4% 2%;
 					border-radius: 4px;
 					box-shadow: 0 0 2px 1px black;
 					font-size: 1.5vw;
 					&:active {
-						background-color: #364fd4;
-						color: white;
+						background-color: var(--select);
+						color: var(--color);
 					}
 				}
 			}
@@ -96,7 +96,7 @@
 		.addFilterBtn {
 			width: 12vw;
 
-			background-color: #364fd4;
+			background-color: var(--select);
 			color: white;
 			font-size: 1.5vw;
 			padding-block: 2vh;
