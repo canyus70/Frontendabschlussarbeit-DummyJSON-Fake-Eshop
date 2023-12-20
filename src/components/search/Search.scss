@@ -5,18 +5,18 @@
 	margin-bottom: 3vw;
 	.search {
 		input {
-			height: 6vw;
-			width: 40vw;
+			height: 5vh;
+			width: 65vw;
 			border-radius: 1vw;
-			padding: 1vw;
-			font-size: 3vw;
+			padding: 2vw;
+			font-size: 2.5vh;
 			background-color: rgba(128, 128, 128, 0.242);
 			border: none;
 			&:focus {
 				outline: none;
 			}
 			&::placeholder {
-				padding-left: 3.5vw;
+				padding-left: 3vh;
 				background: url(../../../public/img/Search.svg) left / contain
 					no-repeat;
 			}
@@ -24,7 +24,7 @@
 	}
 	.imageHolder {
 		background-color: #364fd4;
-		width: 6vw;
+		width: 5vh;
 		aspect-ratio: 1/1;
 		display: flex;
 		justify-content: center;
@@ -35,5 +35,23 @@
 			width: 100%;
 			aspect-ratio: 1/1;
 		}
+	}
+}
+
+@media (min-width: 900px) {
+	.searchWrapper {
+		.search {
+			input {
+				width: 45vw;
+				font-size: 2vw;
+				&::placeholder {
+					padding-left: 2.3vw;
+				}
+			}
+		}
+	}
+	.imageHolder {
+		width: 4vw !important;
+		padding: 0.5% !important;
 	}
 }

@@ -25,3 +25,15 @@
 		}
 	}
 }
+
+@media (min-width: 900px) {
+	.categoryBar {
+		justify-content: space-evenly;
+		gap: 1.5vw;
+		margin: 2% auto;
+		a {
+			min-width: 5vw;
+			padding: 1.3%;
+		}
+	}
+}

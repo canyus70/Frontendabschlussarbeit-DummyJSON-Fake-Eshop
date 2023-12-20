@@ -53,6 +53,7 @@ const Search = () => {
 					src={Filter}
 					alt=''
 					onClick={() => setSlide(!slide)}
+					className='filterIcon'
 				/>
 			</section>
 		</section>
