@@ -52,7 +52,7 @@ function App() {
 	const [brand, setBrand] = useState("");
 
 	const [favorites, setFavorites] = useState([]);
-
+	
 	const [warenkorb, setWarenkorb] = useState([]);
 
 	const contextObject = {
@@ -82,6 +82,7 @@ function App() {
 		setFavorites,
 		warenkorb,
 		setWarenkorb,
+		
 	};
 
 	return (

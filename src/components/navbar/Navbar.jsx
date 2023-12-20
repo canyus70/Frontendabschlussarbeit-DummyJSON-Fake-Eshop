@@ -4,6 +4,8 @@ import "./Navbar.scss"
 import { useContext } from "react";
 import { Products } from "./../../context/Context";
 import Heart from "../svg/Heart";
+import CartIcon from "../svg/CartIcon";
+import CartIconcopy from "../svg/CartIconcopy";
 
 const Navbar = () => {
 
@@ -23,11 +25,11 @@ const Navbar = () => {
             <img className="homeButton_Navbar" src={HomeButton} alt="HomeButton" />
          </Link>
          <div className="cartContainer_Navbar">
-            <Link to="/cart">Warenkorb</Link>
+            <Link to="/cart">{changeMode.darkmode ? <CartIconcopy/> : <CartIcon/>}</Link>
             <div className="cartCounter_Navbar">{changeMode.warenkorb.length}</div>
          </div>
          <div>
-            <Link to='/favorites'> <Heart /> </Link>
+            <Link to='/favorites'><Heart /></Link>
          </div>
          <div onClick={modeChange} className="toggleContainer_Navbar">
             <div className={`toggle_Navbar ${changeMode.darkmode ? "dark" : ""}`}></div>

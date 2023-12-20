@@ -2,22 +2,36 @@ import { Link } from "react-router-dom";
 import "./ProductItem.scss";
 import Frame from "../../../public/img/Frame.svg";
 import Framecopy from "../../../public/img/Framecopy.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Star from "../svg/Star";
 import { Products } from "../../context/Context";
 
 
 const ProductItem = ({ id, product, title, price, image, rating }) => {
 	const {warenkorb, setWarenkorb}= useContext(Products)
-	// console.log(warenkorb,setWarenkorb)
+	const changeIcon = useContext(Products)
 
 	const addToCart = () => {
 		setWarenkorb([...warenkorb, product] )
-		// console.log(warenkorb)
 	}
+/* 	const addToCart = () => {
+		const updatedCartItems = { ...warenkorb }; // Kopie des aktuellen Warenkorbs
+		updatedCartItems[id] = (updatedCartItems[id] || 0) + 1; // Erhöhe die Anzahl für das Produkt
+		setWarenkorb(updatedCartItems); // Aktualisiere den Warenkorb im Context
+		console.log(updatedCartItems)
+	  }; */
 
-	const changeIcon = useContext(Products)
 
+	/*   const getTotalCartAmount = () => {
+		  let totalAmount = 0;
+		  for (const id in warenkorb) {
+			  if (warenkorb[id] > 0) {
+				  let itemInfo = product.find((pro) => pro.id === Number(id));
+				  totalAmount += warenkorb[id] * itemInfo.price;
+				}
+			}
+			return totalAmount;
+		}; */
 
 	return (
 		<article className='productItem'>
