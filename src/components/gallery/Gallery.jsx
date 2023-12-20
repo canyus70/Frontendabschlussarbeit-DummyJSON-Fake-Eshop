@@ -28,8 +28,6 @@ const Gallery = ({ renderProducts, id }) => {
 					product.brand === brand ? product : null,
 				),
 			);
-		} else {
-			setResultproducts(renderProducts);
 		}
 		// console.log(price.highest, price.lowest);
 	}, [renderProducts, brand, price]);
