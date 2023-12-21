@@ -1,14 +1,23 @@
 .searchWrapper {
 	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+	flex-direction: column;
 	gap: 2vw;
 	margin-bottom: 3vw;
-	.icon_Search {
-		width: 12vh;
-	}
-	.loginImage_Search {
-		width: 7vh;
+	.containerIcons_Search {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-inline: 5%;
+		padding-top: 2vh;
+		padding-bottom: 1vh;
+		a {
+			.icon_Search {
+				width: 8vh;
+			}
+			.loginImage_Search {
+				width: 4vh;
+			}
+		}
 	}
 	.searchContainer_Search {
 		display: flex;

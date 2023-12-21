@@ -44,7 +44,10 @@ const Search = () => {
 
 	return (
 		<section className='searchWrapper'>
-			<Link to="/home"><img className="icon_Search" src={darkmode.darkmode ? Iconorange : Iconblue} alt="company icon" /></Link>
+			<div className="containerIcons_Search">
+				<Link to="/home"><img className="icon_Search" src={darkmode.darkmode ? Iconorange : Iconblue} alt="company icon" /></Link>
+				<Link to="/login"><img className="loginImage_Search" src={darkmode.darkmode ? loginorange : loginblue} alt="login button" /></Link>
+			</div>
 			<div className="searchContainer_Search">
 				<form
 					className='search'
@@ -64,7 +67,6 @@ const Search = () => {
 						/>
 				</section>
 			</div>
-			<Link to="/login"><img className="loginImage_Search" src={darkmode.darkmode ? loginorange : loginblue} alt="login button" /></Link>
 		</section>
 	);
 };
