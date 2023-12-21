@@ -50,6 +50,7 @@ function App() {
 	const [brand, setBrand] = useState("");
 	const [favorites, setFavorites] = useState([]);
 	const [warenkorb, setWarenkorb] = useState([]);
+	const [filterFavorites, setFilterFavorites] = useState([]);
 
 	const contextObject = {
 		products,
@@ -77,7 +78,9 @@ function App() {
 		warenkorb,
 		setWarenkorb,
 		darkmode,
-		setDarkmode
+		setDarkmode,
+		filterFavorites, 
+		setFilterFavorites,
 	};
 
 	useEffect(() => {

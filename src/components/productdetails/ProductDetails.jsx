@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Products } from "./../../context/Context";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Star from './../svg/Star';
@@ -44,8 +44,16 @@ const ProductDetails = () => {
         setFavorites([...favorites, object])
     }
 
-    const addToCart = (object) => {
-		setWarenkorb([...warenkorb, object] )
+    useEffect(() => {
+        console.log(count);
+    }, [count])
+
+    const addToCart = (object, amount) => {
+        const toAdd = [];
+        for(let i = 0; i < amount; i++){
+            toAdd.push(object)
+        }
+        setWarenkorb([...warenkorb].concat(toAdd))
 	}
  
 
@@ -59,16 +67,20 @@ const ProductDetails = () => {
                         <div className="heart_wrap_details" onClick={() => addToFavorites(product)}> {favoriteSelected ? <HeartFilled /> : <Heart />} </div>
                     </div>
                     
+                    <div className="mediaQueries_wrap">
+
                     <div className="detailCard_wrap_details">
-                        <img src={product.thumbnail} alt={product.title} />
+                        <img src={product.thumbnail} alt={product.title} className="detailsImage"/>
                         <article className="info_wrap_details">
                             <div className="firstFlex_wrap_details">
                                 <h2>{product.title}</h2>
+
                                 <div className="quantityCounter_wrap_details">
                                     <button onClick={minusOne}>-</button>
                                     <p>{count}</p>
                                     <button onClick={plusOne}>+</button>
                                 </div>
+
                             </div>
                             <p className="rating_details"> <Star /> {product.rating}</p>
                             <div className="secondFlex_wrap_details">
@@ -77,9 +89,15 @@ const ProductDetails = () => {
                             </div>
                         </article>
                     </div>
-                    <h2 className="descriptionHeadline_details">Description</h2>
-                    <p className="description_details">{product.description}</p>
-                    <button className="addToCart" onClick={() => addToCart(product)}>Add to Cart</button>
+
+                    <div className="footer_wrap_details">
+                        <h2 className="descriptionHeadline_details">Description</h2>
+                        <p className="description_details">{product.description}</p>
+                        <button className="addToCart_details" onClick={() => addToCart(product, count)}>Add to Cart</button>
+                    </div>
+                    </div>
+                    
+                    
                 </article>
             ))}
             <Navbar/>
