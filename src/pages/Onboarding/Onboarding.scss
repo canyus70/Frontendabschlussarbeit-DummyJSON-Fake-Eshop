@@ -1,6 +1,5 @@
 .container_Onbaording {
 	min-height: 100vh;
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -11,7 +10,6 @@
 		width: 430px;
 		height: 430px;
 		position: relative;
-
 		.cloud1_Onbaording {
 			position: absolute;
 			z-index: 2;
@@ -100,6 +98,28 @@
 			z-index: 1;
 			width: 100%;
 			height: 100%;
+		}
+		@media (min-width: 900px) {
+			overflow: visible;
+			.blurLeft_Onboarding {
+				background-image: url(./../../assets/images/onboarding/backgroundOnboardingImage.svg);
+				background-repeat: no-repeat;
+				width: 430px;
+				height: 430px;
+				position: absolute;
+				left: -351px;
+				top: 47px;
+			}
+			.blurRight_Onboarding {
+				background-image: url(./../../assets/images/onboarding/backgroundOnboardingImage.svg);
+				background-repeat: no-repeat;
+				width: 430px;
+				height: 430px;
+				position: absolute;
+				right: -310px;
+				top: -29px;
+				transform: rotate(180deg);
+			}
 		}
 	}
 	.containerText_Onbaording {
