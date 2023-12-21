@@ -8,8 +8,8 @@
     }
 
     .header_wrap_details{
-        margin-top: 3vh;
-        margin-bottom: 4vh;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
         text-align: center;
         position: relative;
         .leftArrow_wrap_details{
@@ -29,11 +29,14 @@
             position: absolute;
             right: 0;
             top: 0;
+            fill: var(--select);
             
         }
     }
     
     .detailCard_wrap_details{
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+        border-radius: 24px;
         max-width: 500px;
         margin: 0 auto;
         img {
