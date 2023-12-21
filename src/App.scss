@@ -20,7 +20,7 @@ img {
     --backgroundItem: rgba(255, 255, 255, 0.503);
     --select: #364FD4;
     --selectSelected: #2a3da8;
-
+    --shadow: rgba(255, 255, 255, 0);
 }
 
 .darkmode {
@@ -29,7 +29,7 @@ img {
     --backgroundItem: #15616d84;
     --select: #ff7d00;
     --selectSelected: #78290f;
-
+    --shadow: black;
 }
 
 @font-face {

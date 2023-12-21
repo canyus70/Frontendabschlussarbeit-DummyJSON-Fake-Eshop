@@ -43,6 +43,9 @@
 			color: var(--color);
 			padding-top: 0.5vh;
 			line-height: 1.2;
+			&::first-letter {
+				text-transform:uppercase;
+			}
 			@media (min-width: 900px) {
 				font-size: 2vh;
 			}
