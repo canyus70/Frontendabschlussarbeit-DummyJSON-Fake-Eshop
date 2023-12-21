@@ -79,11 +79,7 @@ setIndex(warenkorb.map(item => item.id).indexOf(product.id))
  
     return ( 
         <article  className="cartPage_wrap">
-        <div className="header_wrap_cart">
-            <div className="leftArrow_wrap_cart" onClick={() => navigate(-1)}> <LeftArrow /> </div>
-            <h2 className="headerTitle_cart">{product.title}</h2>
-            <div className="heart_wrap_cart" onClick={() => addToFavorites(product)}> {favoriteSelected ? <HeartFilled /> : <Heart />} </div>
-        </div>
+    
         
         <div className="detailCard_wrap_cart">
             <img src={product.thumbnail} alt={product.title} />

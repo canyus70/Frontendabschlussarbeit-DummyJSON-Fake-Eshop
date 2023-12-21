@@ -50,6 +50,8 @@ function App() {
 	const [brand, setBrand] = useState("");
 	const [favorites, setFavorites] = useState([]);
 	const [warenkorb, setWarenkorb] = useState([]);
+	const [filteredCart, setFilteredCart] = useState([])
+	const [cartlength, setCartlength]= useState(filteredCart.length)
 
 	const contextObject = {
 		products,
@@ -77,7 +79,11 @@ function App() {
 		warenkorb,
 		setWarenkorb,
 		darkmode,
-		setDarkmode
+		setDarkmode,
+		cartlength, 
+		setCartlength,
+		filteredCart, 
+		setFilteredCart
 	};
 
 	useEffect(() => {
@@ -87,6 +93,10 @@ function App() {
 			setDarkmode(false)
 		}
 	}, [])
+
+	useEffect(() => {
+setCartlength(filteredCart.length)
+	},[ filteredCart])
 
 	return (
 		<Products.Provider value={contextObject}>

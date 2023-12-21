@@ -11,6 +11,7 @@ import CartIconcopy from "../svg/CartIconcopy";
 const Navbar = () => {
 
    const changeMode = useContext(Products)
+   const {cartlength, warenkorb,filteredCart,setCartlength} = useContext(Products)
 
       const modeChange = () => {
          if (localStorage.getItem("darkmode") === "false") {
@@ -24,6 +25,11 @@ const Navbar = () => {
             changeMode.setDarkmode(false)
          }
       }
+useEffect(() => {
+   setCartlength(filteredCart.length)
+
+},[ warenkorb,filteredCart])
+
 
     return ( 
       <nav className="nav_Navbar">
