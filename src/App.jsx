@@ -8,7 +8,7 @@ import {
 	allTodos,
 	allQoutes,
 } from "./data/Data";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
 	Products,
 	Carts,
@@ -25,9 +25,7 @@ import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
 import Search from "./components/search/Search";
 import ProduktList from "./components/productlist/ProductList";
-
 import Favorites from "./components/favorites/Favorites";
-
 import Cart from "./components/cart/Cart";
 
 function App() {
@@ -39,7 +37,7 @@ function App() {
 	const todosContext = useContext(Todos);
 	const qoutesContext = useContext(Qoutes);
 
-	const [darkmode, setDarkmode] = useState(false);
+	const [darkmode, setDarkmode] = useState(false)
 	const [products, setProducts] = useState(allProducts);
 	const [carts, setCarts] = useState(allCarts);
 	const [users, setUsers] = useState(allUsers);
@@ -50,9 +48,7 @@ function App() {
 	const [slide, setSlide] = useState(false);
 	const [price, setPrice] = useState({ lowest: "", highest: "" });
 	const [brand, setBrand] = useState("");
-
 	const [favorites, setFavorites] = useState([]);
-	
 	const [warenkorb, setWarenkorb] = useState([]);
 
 	const contextObject = {
@@ -70,8 +66,6 @@ function App() {
 		setTodos,
 		qoutes,
 		setQoutes,
-		darkmode,
-		setDarkmode,
 		slide,
 		setSlide,
 		price,
@@ -82,8 +76,17 @@ function App() {
 		setFavorites,
 		warenkorb,
 		setWarenkorb,
-		
+		darkmode,
+		setDarkmode
 	};
+
+	useEffect(() => {
+		if (localStorage.getItem("darkmode") === "true") {
+			setDarkmode(true)
+		} else {
+			setDarkmode(false)
+		}
+	}, [])
 
 	return (
 		<Products.Provider value={contextObject}>
