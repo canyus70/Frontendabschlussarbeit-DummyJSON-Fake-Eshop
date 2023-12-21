@@ -15,6 +15,7 @@ const CartItem = ({product, counter, id}) => {
 
     const [count, setCount] = useState(counter)
     const [index, setIndex] = useState(null)
+    const [stock, setStock] = useState(product.stock)
    
     const [favoriteSelected, setFavoriteSelected] = useState(false);
 
@@ -28,30 +29,21 @@ const CartItem = ({product, counter, id}) => {
 
     // onClick funktions für den Counter, wie viele Produkte in den Warenkorb sollen:
     const plusOne = () => {
-        setCount(count + 1)
-        setWarenkorb([...warenkorb, product])
-    }
-
-/*     const minusOne = () => {
-        if(count > 1){
-            setCount(count - 1)
-        setWarenkorb([...warenkorb].splice(index, 1))
+        if(stock > 0 ) {
+            setCount(count + 1)
+            setWarenkorb([...warenkorb, product])
+            setStock(stock -1)
         } else {
-            console.log(count)
-            setWarenkorb([...warenkorb].filter((item) => {
-                if(item.id !== product.id) {
-                    return item
-                }
-            }))
+            window.alert("Gibt es nicht mehr. Bitte komme morgen wieder")
         }
-    } */
-
+    }
 
 
     const minusOne = () => {
+        setStock(stock +1)
+
         if (count > 1) {
             setCount(count - 1);
-    
             // Filtern des Arrays, um das Element mit dem Index zu entfernen
             const updatedWarenkorb = warenkorb.filter((item, idx) => idx !== index);
             setWarenkorb(updatedWarenkorb);
@@ -75,7 +67,8 @@ const CartItem = ({product, counter, id}) => {
 setCount(counter)  
 console.log(warenkorb)
 setIndex(warenkorb.map(item => item.id).indexOf(product.id))
-
+/* setStock(product.stock)
+ */
  },[counter,warenkorb])
 
  useEffect(() => {
@@ -86,11 +79,7 @@ setIndex(warenkorb.map(item => item.id).indexOf(product.id))
  
     return ( 
         <article  className="cartPage_wrap">
-        <div className="header_wrap_cart">
-            <div className="leftArrow_wrap_cart" onClick={() => navigate(-1)}> <LeftArrow /> </div>
-            <h2 className="headerTitle_cart">{product.title}</h2>
-            {/* <div className="heart_wrap_cart" onClick={() => addToFavorites(product)}> {favoriteSelected ? <HeartFilled /> : <Heart />} </div> */}
-        </div>
+
         
         <div className="detailCard_wrap_cart">
             <img src={product.thumbnail} alt={product.title} />
@@ -105,7 +94,7 @@ setIndex(warenkorb.map(item => item.id).indexOf(product.id))
                 </div>
                 <p className="rating_cart"> <Star /> {product.rating}</p>
                 <div className="secondFlex_wrap_cart">
-                    <p className="stock_cart">{product.stock} pieces in stock</p>
+                    <p className="stock_cart">{stock} pieces in stock</p>
                     <h4 className="price_cart">$ {product.price}.00</h4>
                 </div>
             </article>

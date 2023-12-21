@@ -4,13 +4,14 @@ import Navbar from "../navbar/Navbar";
 import CartItem from "../cartitem/CartItem";
 import "./Cart.scss"
 
+
 const Cart = () => {
-const {warenkorb, setWarenkorb} = useContext(Products)
+const {warenkorb, setWarenkorb, cartlength, setCartlength,filteredCart, setFilteredCart} = useContext(Products)
 const [productcount, setProductCount]= useState({})
 const [totalPrice, setTotalPrice] = useState(0)
 
-const [filteredCart, setFilteredCart] = useState(warenkorb)
-
+/* const [filteredCart, setFilteredCart] = useState(warenkorb)
+ */
 useEffect(() => {
     setFilteredCart([...new Set(warenkorb)])
     const countObject = warenkorb.reduce((x, y) => {
@@ -27,12 +28,19 @@ useEffect(() => {
         
     });
     setTotalPrice(sum)
-    console.log(sum)
+    console.log(filteredCart)
 },[warenkorb])
+
+useEffect(() => {
+    setCartlength(filteredCart.length)
+
+},[warenkorb, filteredCart])
 
 
     return ( 
-<section className="cartcontainer_Cart">
+
+<section className="cartcontainer_Cart"> <div className="media_query">
+
     {filteredCart.length !== 0 ? (filteredCart.map((product, index) => ( 
         <CartItem
         product={product}
@@ -46,8 +54,15 @@ useEffect(() => {
 
 
     />
-    ))):  (<p>Your Cart is Empty</p>)  }
-    <div>$ {totalPrice}</div>
+    ))):  (<p className="cart_empty">Your Cart is Empty</p>)  }
+    </div>
+    <div className="price_container"><h2>Total</h2>
+        <p>Subtotal: $ {totalPrice}</p>
+        <p>Delivery: $ 0.00 </p>
+        <p>Total Cost (incl. VAT.): $ {totalPrice}  </p>
+        <div><button className="checkout_btn">GO TO CHECKOUT</button></div> 
+    </div>
+    
     <Navbar />
 </section>     );
 }
