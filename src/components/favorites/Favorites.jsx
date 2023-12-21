@@ -1,15 +1,19 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Products } from "./../../context/Context";
 import ProductItem from "../productitem/ProductItem";
 import './Favorites.scss'
 import Navbar from "../navbar/Navbar";
 import HeartFilled from "../svg/HeartFilled";
+import Star from "../svg/Star";
+import Frame from "../../../public/img/Frame.svg";
+import Framecopy from "../../../public/img/Framecopy.svg";
 
 const favorites = () => {
-    const { favorites, setFavorites } = useContext(Products);
+    const { favorites, setFavorites, filterFavorites, setFilterFavorites, darkmode, setDarkmode, warenkorb, setWarenkorb } = useContext(Products);
     console.log('Array favorites', favorites);
 
-    const [filterFavorites, setFilterFavorites] = useState([]);
+    
     useEffect(() => {
         setFilterFavorites([...new Set(favorites)])
     }, [favorites])
@@ -19,26 +23,43 @@ const favorites = () => {
         setFavorites(filteredFavorites);
     }
 
+    const addToCart = (object) => {
+		setWarenkorb([...warenkorb, object] )
+	}
+    console.log(filterFavorites);
+
     return (  
         <>
         <section className="favorites_wrap">
-            <section className="new_wrap_favorites">
             <h2>Your desired products</h2>
+            <section className="new_wrap_favorites">
             {filterFavorites.length !== 0 ? (
                 filterFavorites.map((product, index) => (
+
                     <div className="singleFavoriteItem_wrap" key={index}>
-                        
-                        <ProductItem
-					id={product.id}
-					key={product.id}
-					title={product.title}
-					price={Number(product.price).toFixed(2)}
-					image={product.thumbnail}
-					rating={product.rating}
-                        />
-                        <div onClick={() => deleteFavorite(product.id)} className="filledHeart_wrap_favorites">
-                            <HeartFilled/>
+
+                        <Link  to={`/product-details/${product.id}`}>
+                            <img src={product.thumbnail} alt={product.title} className="productImage_favorites"/>
+                            <h4 className='rating_favorites'> <Star /> {product.rating}
+				            </h4>
+                            <h2>{product.title}</h2>
+                        </Link>
+
+                        <div className="pricingContainer_favorites">
+                            <h3 className="price_favorites">${Number(product.price).toFixed(2)}</h3>
+
+                            <div onClick={() => deleteFavorite(product.id)} className="filledHeart_wrap_favorites">
+                                <HeartFilled/>
+                            </div>
+
+                            <Link className='addButton_favorites' onClick={() => addToCart(product)}>
+					            <img
+						            src={darkmode ? Framecopy : Frame}
+						            alt='button for adding to cart'
+						            className='addButton'/>
+				            </Link>
                         </div>
+                        
                     </div>
                 ))) : (
                     <p>No favorites selected yet</p>
