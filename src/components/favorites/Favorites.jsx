@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Products } from "./../../context/Context";
 import ProductItem from "../productitem/ProductItem";
 import './Favorites.scss'
@@ -8,6 +8,11 @@ import HeartFilled from "../svg/HeartFilled";
 const favorites = () => {
     const { favorites, setFavorites } = useContext(Products);
     console.log('Array favorites', favorites);
+
+    const [filterFavorites, setFilterFavorites] = useState([]);
+    useEffect(() => {
+        setFilterFavorites([...new Set(favorites)])
+    }, [favorites])
 
     const deleteFavorite = (id) => {
         const filteredFavorites = favorites.filter((singleProduct) => singleProduct.id !== id);
@@ -19,8 +24,8 @@ const favorites = () => {
         <section className="favorites_wrap">
             <section className="new_wrap_favorites">
             <h2>Your desired products</h2>
-            {favorites.length !== 0 ? (
-                favorites.map((product, index) => (
+            {filterFavorites.length !== 0 ? (
+                filterFavorites.map((product, index) => (
                     <div className="singleFavoriteItem_wrap" key={index}>
                         
                         <ProductItem

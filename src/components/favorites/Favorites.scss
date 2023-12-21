@@ -10,6 +10,9 @@
             display: grid;
             grid-template-columns: 6fr 1fr;
             gap: 12px;
+            .filledHeart_wrap_favorites{
+                fill: var(--select);
+            }
         }
     .productItem{
         margin-bottom: 4vh;

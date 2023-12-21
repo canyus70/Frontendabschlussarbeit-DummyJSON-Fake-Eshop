@@ -17,6 +17,8 @@ const Onboarding = () => {
     return ( 
         <div className="container_Onbaording">
         <div className="imageContainer_Onboarding">
+            <div className="blurLeft_Onboarding"></div>
+            <div className="blurRight_Onboarding"></div>
             <img className="cloud1_Onbaording" src={Cloud} alt="cloud1" />
             <img className="cloud2_Onbaording" src={Cloud} alt="cloud2" />
             <img className="cloud3_Onbaording" src={Cloud} alt="cloud3" />

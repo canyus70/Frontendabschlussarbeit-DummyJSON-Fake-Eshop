@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import HomeButton from "./../../assets/images/navbar/Home.svg";
 import HomeButtoncopy from "./../../assets/images/navbar/Homecopy.svg";
 import "./Navbar.scss"
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Products } from "./../../context/Context";
 import Heart from "../svg/HeartFilled";
 import CartIcon from "../svg/CartIcon";
@@ -12,13 +12,18 @@ const Navbar = () => {
 
    const changeMode = useContext(Products)
 
-   const modeChange = () => {
-      if (changeMode.darkmode === false) {
-         changeMode.setDarkmode(true)
-      } else {
-         changeMode.setDarkmode(false)
+      const modeChange = () => {
+         if (localStorage.getItem("darkmode") === "false") {
+            localStorage.removeItem("darkmode")
+            localStorage.setItem("darkmode", "true");
+            changeMode.setDarkmode(true)
+
+         } else {
+            localStorage.removeItem("darkmode")
+            localStorage.setItem("darkmode", "false");
+            changeMode.setDarkmode(false)
+         }
       }
-   }
 
     return ( 
       <nav className="nav_Navbar">
@@ -41,5 +46,4 @@ const Navbar = () => {
      );
 }
  
-export default Navbar
-;
+export default Navbar;
