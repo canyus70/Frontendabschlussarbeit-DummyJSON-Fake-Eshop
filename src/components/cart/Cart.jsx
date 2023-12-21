@@ -38,7 +38,9 @@ useEffect(() => {
 
 
     return ( 
+
 <section className="cartcontainer_Cart"> <div className="media_query">
+
     {filteredCart.length !== 0 ? (filteredCart.map((product, index) => ( 
         <CartItem
         product={product}

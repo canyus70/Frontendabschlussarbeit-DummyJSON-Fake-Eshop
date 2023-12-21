@@ -27,6 +27,8 @@ import Search from "./components/search/Search";
 import ProduktList from "./components/productlist/ProductList";
 import Favorites from "./components/favorites/Favorites";
 import Cart from "./components/cart/Cart";
+import Login from "./pages/Login/Login";
+import UserHome from "./pages/UserHome/UserHome";
 
 function App() {
 	const productContext = useContext(Products);
@@ -50,8 +52,12 @@ function App() {
 	const [brand, setBrand] = useState("");
 	const [favorites, setFavorites] = useState([]);
 	const [warenkorb, setWarenkorb] = useState([]);
+
 	const [filteredCart, setFilteredCart] = useState([])
 	const [cartlength, setCartlength]= useState(filteredCart.length)
+=======
+	const [filterFavorites, setFilterFavorites] = useState([]);
+
 
 	const contextObject = {
 		products,
@@ -80,10 +86,15 @@ function App() {
 		setWarenkorb,
 		darkmode,
 		setDarkmode,
+
 		cartlength, 
 		setCartlength,
 		filteredCart, 
 		setFilteredCart
+
+		filterFavorites, 
+		setFilterFavorites,
+
 	};
 
 	useEffect(() => {
@@ -129,6 +140,14 @@ setCartlength(filteredCart.length)
 					<Route
 						path='/cart'
 						element={<Cart />}
+					/>
+					<Route
+						path="login"
+						element={<Login/>}
+					/>
+					<Route
+						path="userhome"
+						element={<UserHome/>}
 					/>
 				</Routes>
 			</div>

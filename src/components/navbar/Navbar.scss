@@ -18,6 +18,7 @@
 	.homeIcon_Navbar {
 		.homeButton_Navbar {
 			width: 30px;
+			filter: drop-shadow(0 0 3px var(--shadow));
 		}
 	}
 	.toggleContainer_Navbar {
@@ -27,6 +28,7 @@
 		height: 30px;
 		padding: 5px;
 		position: relative;
+		cursor: pointer;
 		.toggleBackground_NBavbar {
 			width: 50px;
 			height: 20px;
@@ -55,6 +57,7 @@
     .cartContainer_Navbar {
         position: relative;
 		margin-top: 10px;
+		filter: drop-shadow(0 0 3px var(--shadow));
         .cartCounter_Navbar {
             position: absolute;
             width: 22px;
@@ -78,6 +81,7 @@
 	.heartContainer_Navbar {
 		position: relative;
 		margin-top: 10px;
+		filter: drop-shadow(0 0 3px var(--shadow));
 		.heartCounter_Navbar {
 			position: absolute;
             width: 22px;

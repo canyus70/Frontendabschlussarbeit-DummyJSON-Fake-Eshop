@@ -79,7 +79,7 @@ setIndex(warenkorb.map(item => item.id).indexOf(product.id))
  
     return ( 
         <article  className="cartPage_wrap">
-    
+
         
         <div className="detailCard_wrap_cart">
             <img src={product.thumbnail} alt={product.title} />
