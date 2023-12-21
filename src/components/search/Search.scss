@@ -1,44 +1,53 @@
 .searchWrapper {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
+	align-items: center;
 	gap: 2vw;
 	margin-bottom: 3vw;
-	.search {
-		input {
-			height: 5vh;
-			width: 65vw;
-			border-radius: 1vw;
-			padding: 2vw;
-			font-size: 2.5vh;
-			background-color: rgba(128, 128, 128, 0.242);
-			border: none;
-			&:focus {
-				outline: none;
-			}
-			&::placeholder {
-				padding-left: 3vh;
-				background: url(../../../public/img/Search.svg) left / contain
-					no-repeat;
-			}
-		}
+	.icon_Search {
+		width: 12vh;
 	}
-	.imageHolder {
-
-
-		width: 5vh;
-
-		background-color: var(--select);
-
-
-		aspect-ratio: 1/1;
+	.loginImage_Search {
+		width: 7vh;
+	}
+	.searchContainer_Search {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: 1vw;
-		padding: 1%;
-		img {
-			width: 100%;
+		gap: 2vw;
+		.search {
+			input {
+				height: 5vh;
+				width: 65vw;
+				border-radius: 1vw;
+				padding: 2vw;
+				font-size: 2.5vh;
+				background-color: rgba(128, 128, 128, 0.242);
+				border: none;
+				&:focus {
+					outline: none;
+				}
+				&::placeholder {
+					padding-left: 3vh;
+					background: url(../../../public/img/Search.svg) left / contain
+					no-repeat;
+				}
+			}
+		}
+		.imageHolder {
+			width: 5vh;
+			background-color: var(--select);
+			cursor: pointer;
 			aspect-ratio: 1/1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 1vw;
+			padding: 1%;
+			img {
+				width: 100%;
+				aspect-ratio: 1/1;
+			}
 		}
 	}
 }
