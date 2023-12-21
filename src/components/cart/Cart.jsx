@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Products } from "../../context/Context";
 import Navbar from "../navbar/Navbar";
 import CartItem from "../cartitem/CartItem";
-
+import "./Cart.scss"
 
 const Cart = () => {
 const {warenkorb, setWarenkorb} = useContext(Products)
@@ -32,7 +32,7 @@ useEffect(() => {
 
 
     return ( 
-<section>
+<section className="cartcontainer_Cart">
     {filteredCart.length !== 0 ? (filteredCart.map((product, index) => ( 
         <CartItem
         product={product}

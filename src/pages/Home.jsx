@@ -23,7 +23,6 @@ const Home = () => {
 				slide={slide}
 				setSlide={setSlide}
 			/>
-			<h1>Find your favorite Product</h1>
 			<Search />
 			<CategoryBar />
 			<div className='title'>
