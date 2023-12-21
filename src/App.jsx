@@ -55,7 +55,7 @@ function App() {
 
 	const [filteredCart, setFilteredCart] = useState([])
 	const [cartlength, setCartlength]= useState(filteredCart.length)
-=======
+
 	const [filterFavorites, setFilterFavorites] = useState([]);
 
 
@@ -86,12 +86,10 @@ function App() {
 		setWarenkorb,
 		darkmode,
 		setDarkmode,
-
 		cartlength, 
 		setCartlength,
 		filteredCart, 
-		setFilteredCart
-
+		setFilteredCart,
 		filterFavorites, 
 		setFilterFavorites,
 
