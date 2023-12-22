@@ -9,7 +9,8 @@ const Cart = () => {
 const {warenkorb, setWarenkorb, cartlength, setCartlength,filteredCart, setFilteredCart} = useContext(Products)
 const [productcount, setProductCount]= useState({})
 const [totalPrice, setTotalPrice] = useState(0)
-
+const [voucherText, setVoucherText] = useState("");
+const [showButton, setShowButton] = useState(false);
 /* const [filteredCart, setFilteredCart] = useState(warenkorb)
  */
 useEffect(() => {
@@ -37,9 +38,44 @@ useEffect(() => {
 },[warenkorb, filteredCart])
 
 
+
+const handleAccordion = () => {
+    setShowButton(!showButton); 
+    console.log("klick")
+    console.log(showButton)
+};
+
+const handleVoucherChange = (event) => {
+    setVoucherText(event.target.value);
+    setShowButton(event.target.value !== "");
+};
+
+const handleSubmitVoucher = () => {
+    applyVoucher(voucherText);
+    console.log("Voucher redeemed amk:", voucherText);
+    setVoucherText("");
+    setShowButton(false);
+};
+
+const applyVoucher = (code) => {
+    const validCode = "Metin der Zerstörer";
+
+    if (code === validCode) {
+        const discount = totalPrice * 0.2; 
+        const discountedPrice = totalPrice - discount;
+        setTotalPrice(discountedPrice);
+/*         console.log("Rabatt angewendet!");
+ */    } else {
+/*         console.log("Ungültiger Gutscheincode!");
+ */    }
+};
+
+
+
     return ( 
 
-<section className="cartcontainer_Cart"> <div className="media_query">
+<section className="cartcontainer_Cart"> 
+<div className="media_query">
 
     {filteredCart.length !== 0 ? (filteredCart.map((product, index) => ( 
         <CartItem
@@ -60,9 +96,24 @@ useEffect(() => {
         <p>Subtotal: $ {totalPrice}</p>
         <p>Delivery: $ 0.00 </p>
         <p>Total Cost (incl. VAT.): $ {totalPrice}  </p>
-        <div><button className="checkout_btn">GO TO CHECKOUT</button></div> 
-    </div>
+        <div><button className="checkout_btn">Pay</button></div> 
+    <div>
+    <button className="accordion" onClick={() => handleAccordion()}>Add a voucher (Optional)</button>
+    <div className="panel" style={showButton ? {display : "block" } : {display : "none"}}>
+    <input
+    className="input_voucher"
+    type="text"
+    value={voucherText} 
+    onChange={handleVoucherChange} 
+    placeholder="Enter voucher code..."
     
+    />
+    {showButton && ( 
+        <button className="redeem_btn" onClick={handleSubmitVoucher}>REDEEM</button>
+        )}
+    </div>
+    </div>
+    </div>
     <Navbar />
 </section>     );
 }
