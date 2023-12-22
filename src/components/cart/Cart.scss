@@ -1,13 +1,12 @@
 .cartcontainer_Cart {
-
     padding-block: 8vh;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    .media_query{
+
+    .media_query {
         @media (min-width: 576px) {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -26,59 +25,99 @@
         }
     }
 
-
-
     .cart_empty {
         text-align: center;
         padding-top: 20px;
-
-        
+        grid-column: 2/3;
+        @media (min-width: 1200px) {
+            grid-column: 2/4;
+            
+        }
     }
+
     .price_container {
         text-align: center;
-        max-width: 300px;
+        max-width: 50vw;
         margin: 0 auto;
-        padding: 5%;
+        padding: 2%;
         background-color: var(--backgroundItem);
         border-radius: 24px;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
         margin-top: 8vh;
         margin-bottom: 4vh;
-        
-        
-    
 
-
-        
         p {
-            padding: 6px;
+            padding-block:4%;         
             font-size: 1rem;
+            
 
-            &:nth-of-type(2){
-                border-bottom: 1px solid white;
+            &:nth-of-type(2) {
+                border-bottom: 1px solid var(--select);
+                padding-block:4%;        
 
             }
             &:nth-of-type(3) {
                 font-weight: 900;
-                    
+                padding-block:4%;         
+
             }
         }
-            .checkout_btn {
-                font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
-                color: white;
-                width: 100%;
-                padding: 4%;
-                border-radius: 16px;
-                border: none;
-                background-color: var(--select);
-                margin-top: 30px;
-            
+
+        .checkout_btn {
+            font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
+            color: var(--background);
+            width: 100%;
+            padding: 4%;
+            border-radius: 16px;
+            border: none;
+            background-color: var(--select);
+            margin-top: 6%;
         }
+
     }
 }
 
+.accordion {
+    background-color: var(--background);
+    color: var(--color);
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid var(--select);
+    outline: none;
+    transition: 0.4s;
+    border-radius: 24px;
+    padding: 4%;
+    text-align: center;
+    margin-block: 6%;
 
+  }
+  
+  .active, .accordion:hover {
+    background-color: var(--select);
+   color: var(--background)
+  }
+  
+  .panel {
+    display: none;
+    overflow: hidden;
+    background: transparent;
+  }
+  .input_voucher {
+    width: 100%;
+    border: 2px solid var(--select);
+    border-radius: 8px;
+    padding: 4%;
+    background: transparent;
+    margin-block: 2%;
+  }
+  .redeem_btn {
+    font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
+    color: var(--background);
+    width: 100%;
+    padding: 4%;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--select);
+    margin-block: 2%;
 
-
-
-
+  }
