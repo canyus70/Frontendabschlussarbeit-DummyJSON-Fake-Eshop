@@ -18,6 +18,20 @@
 				width: 4vh;
 			}
 		}
+		.LoginOut_Container {
+			display: flex;
+			flex-direction: row-reverse;
+			gap: 1vw;
+			a {
+				//logout
+				&:nth-of-type(2) {
+					transform: rotateY(180deg);
+				}
+				//Login
+				&:nth-last-of-type(2) {
+				}
+			}
+		}
 	}
 	.searchContainer_Search {
 		display: flex;
@@ -38,8 +52,8 @@
 				}
 				&::placeholder {
 					padding-left: 3vh;
-					background: url(../../../public/img/Search.svg) left / contain
-					no-repeat;
+					background: url(../../../public/img/Search.svg) left /
+						contain no-repeat;
 				}
 			}
 		}

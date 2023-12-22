@@ -2,7 +2,6 @@ import "./App.scss";
 import {
 	allProducts,
 	allCarts,
-	allUsers,
 	allPosts,
 	allComments,
 	allTodos,
@@ -12,7 +11,6 @@ import { useContext, useEffect, useState } from "react";
 import {
 	Products,
 	Carts,
-	Users,
 	Posts,
 	Comments,
 	Todos,
@@ -21,7 +19,7 @@ import {
 import Home from "./pages/Home";
 import Splashscreen from "./pages/splashscreen/Splashscreen";
 import Onboarding from "./pages/Onboarding/Onboarding";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, json } from "react-router-dom";
 import ProductDetails from "./components/productdetails/ProductDetails";
 import Search from "./components/search/Search";
 import ProduktList from "./components/productlist/ProductList";
@@ -29,20 +27,20 @@ import Favorites from "./components/favorites/Favorites";
 import Cart from "./components/cart/Cart";
 import Login from "./pages/Login/Login";
 import UserHome from "./pages/UserHome/UserHome";
+import { validate } from "uuid";
 
 function App() {
 	const productContext = useContext(Products);
 	const cartsContext = useContext(Carts);
-	const usersContext = useContext(Users);
 	const postsContext = useContext(Posts);
 	const commetsContext = useContext(Comments);
 	const todosContext = useContext(Todos);
 	const qoutesContext = useContext(Qoutes);
 
-	const [darkmode, setDarkmode] = useState(false)
+	const [darkmode, setDarkmode] = useState(false);
 	const [products, setProducts] = useState(allProducts);
 	const [carts, setCarts] = useState(allCarts);
-	const [users, setUsers] = useState(allUsers);
+
 	const [posts, setPosts] = useState(allPosts);
 	const [comments, setComments] = useState(allComments);
 	const [todos, setTodos] = useState(allTodos);
@@ -52,20 +50,17 @@ function App() {
 	const [brand, setBrand] = useState("");
 	const [favorites, setFavorites] = useState([]);
 	const [warenkorb, setWarenkorb] = useState([]);
-
-	const [filteredCart, setFilteredCart] = useState([])
-	const [cartlength, setCartlength]= useState(filteredCart.length)
-
+	const [filteredCart, setFilteredCart] = useState([]);
+	const [cartlength, setCartlength] = useState(filteredCart.length);
 	const [filterFavorites, setFilterFavorites] = useState([]);
-
-
+	const [user, setUser] = useState("");
+	const [users, setUsers] = useState([]);
+	const [newUser, setNewUser] = useState(0);
 	const contextObject = {
 		products,
 		setProducts,
 		carts,
 		setCarts,
-		users,
-		setUsers,
 		posts,
 		setPosts,
 		comments,
@@ -86,26 +81,63 @@ function App() {
 		setWarenkorb,
 		darkmode,
 		setDarkmode,
-		cartlength, 
+		cartlength,
 		setCartlength,
-		filteredCart, 
+		filteredCart,
 		setFilteredCart,
-		filterFavorites, 
+		filterFavorites,
 		setFilterFavorites,
-
+		users,
+		setUsers,
+		user,
+		setUser,
+		newUser,
+		setNewUser,
 	};
 
 	useEffect(() => {
 		if (localStorage.getItem("darkmode") === "true") {
-			setDarkmode(true)
+			setDarkmode(true);
 		} else {
-			setDarkmode(false)
+			setDarkmode(false);
 		}
-	}, [])
+	}, []);
 
 	useEffect(() => {
-setCartlength(filteredCart.length)
-	},[ filteredCart])
+		const activeUser = localStorage.activeUser;
+		console.log(activeUser);
+		setUser(activeUser);
+		if (activeUser) {
+			const localWarenkorb = JSON.parse(
+				localStorage.getItem("cart" + activeUser),
+			);
+			const localfav = JSON.parse(
+				localStorage.getItem("fav" + activeUser),
+			);
+			setWarenkorb([...new Set(localWarenkorb)]);
+			setFavorites([...new Set(localfav)]);
+			console.log(localStorage);
+			console.log("success");
+		} else {
+			setWarenkorb([...warenkorb]);
+			setFavorites([...favorites]);
+			console.log("sucks");
+		}
+	}, [newUser]);
+
+	useEffect(() => {
+		console.log(user);
+	}, [user]);
+
+	useEffect(() => {
+		if (user) {
+			localStorage.setItem("cart" + user, JSON.stringify(warenkorb));
+
+			localStorage.setItem("fav" + user, JSON.stringify(favorites));
+		} else {
+			console.log("no user available");
+		}
+	}, [warenkorb, favorites, user]);
 
 	return (
 		<Products.Provider value={contextObject}>
@@ -140,12 +172,12 @@ setCartlength(filteredCart.length)
 						element={<Cart />}
 					/>
 					<Route
-						path="login"
-						element={<Login/>}
+						path='login'
+						element={<Login />}
 					/>
 					<Route
-						path="userhome"
-						element={<UserHome/>}
+						path='userhome'
+						element={<UserHome />}
 					/>
 				</Routes>
 			</div>

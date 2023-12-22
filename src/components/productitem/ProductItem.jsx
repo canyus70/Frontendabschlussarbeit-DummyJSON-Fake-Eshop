@@ -7,17 +7,19 @@ import Star from "../svg/Star";
 import { Products } from "../../context/Context";
 
 const ProductItem = ({ count, id, product, title, price, image, rating }) => {
-
-	const {warenkorb, setWarenkorb}= useContext(Products)
-	const changeIcon = useContext(Products)
+	const { warenkorb, setWarenkorb, loggedIn, users } = useContext(Products);
+	const changeIcon = useContext(Products);
 
 	const addToCart = () => {
-		setWarenkorb([...warenkorb, product] )
-	}
+		setWarenkorb([...warenkorb, product]);
+		localStorage.setItem("users", JSON.stringify(users));
+	};
 
 	return (
 		<article className='productItem'>
-			<Link className="productinfoLink_ProductItem" to={`/product-details/${id}`}>
+			<Link
+				className='productinfoLink_ProductItem'
+				to={`/product-details/${id}`}>
 				<img
 					src={image}
 					alt=''
