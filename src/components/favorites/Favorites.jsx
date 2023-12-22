@@ -40,9 +40,8 @@ const favorites = () => {
 
                         <Link  to={`/product-details/${product.id}`}>
                             <img src={product.thumbnail} alt={product.title} className="productImage_favorites"/>
-                            <h4 className='rating_favorites'> <Star /> {product.rating}
-				            </h4>
                             <h2>{product.title}</h2>
+                            <h4 className='rating_favorites'> <Star /> {product.rating}</h4>
                         </Link>
 
                         <div className="pricingContainer_favorites">

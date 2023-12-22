@@ -34,16 +34,16 @@ const Login = () => {
 			localStorage.setItem("activeUser", loginEmail);
 			setTimeout(() => window.location.reload(), 100);
 		} else {
-			console.log("userdaten falsch");
+			alert("Please check your e-mail and password")
 		}
 	};
 
 	//input login data into local storage
 	const redirectRegistration = () => {
 		if (regEmail !== regChecknEmail) {
-			console.log("Email nicht korrekt");
+			alert("e-mails don't match")
 		} else if (regPasswort !== regCheckPasswort) {
-			console.log("Passwort nicht korrekt");
+			alert("passwords don't match")
 		} else {
 			setChangeClassReg(false);
 			setChangeClassLogin(true);
@@ -52,7 +52,6 @@ const Login = () => {
 			localStorage.setItem("fav" + regEmail, JSON.stringify([]));
 			setNewUser(newUser++);
 		}
-		console.log(localStorage.getItem(regEmail));
 	};
 
 	return (

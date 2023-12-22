@@ -98,9 +98,9 @@ const Cart = () => {
 			</div>
 			<div className='price_container'>
 				<h2>Total</h2>
-				<p>Subtotal: $ {totalPrice}</p>
-				<p>Delivery: $ 0.00 </p>
-				<p>Total Cost (incl. VAT.): $ {totalPrice} </p>
+				<p>Subtotal: <span>$ {totalPrice} </span></p>
+				<p>Delivery:<span> $ 0.00 </span></p>
+				<p>Total Cost (incl. VAT.): <span>$ {totalPrice} </span></p>
 				<div>
 					<button className='checkout_btn'>Pay</button>
 				</div>

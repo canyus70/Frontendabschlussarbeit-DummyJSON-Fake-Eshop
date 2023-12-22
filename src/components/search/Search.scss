@@ -12,7 +12,10 @@
 		padding-bottom: 1vh;
 		a {
 			.icon_Search {
-				width: 8vh;
+				width: 25vw;
+				@media (min-width: 900px) {
+					width: 13vw;
+				}
 			}
 			.loginImage_Search {
 				width: 4vh;
@@ -21,14 +24,11 @@
 		.LoginOut_Container {
 			display: flex;
 			flex-direction: row-reverse;
-			gap: 1vw;
+			gap: 2.5vw;
 			a {
 				//logout
 				&:nth-of-type(2) {
 					transform: rotateY(180deg);
-				}
-				//Login
-				&:nth-last-of-type(2) {
 				}
 			}
 		}
@@ -40,17 +40,18 @@
 		gap: 2vw;
 		.search {
 			input {
+				border: 3px solid var(--select);
 				height: 5vh;
 				width: 65vw;
 				border-radius: 1vw;
 				padding: 2vw;
 				font-size: 2.5vh;
 				background-color: rgba(128, 128, 128, 0.242);
-				border: none;
 				&:focus {
 					outline: none;
 				}
 				&::placeholder {
+					color: var(--select);
 					padding-left: 3vh;
 					background: url(../../../public/img/Search.svg) left /
 						contain no-repeat;
