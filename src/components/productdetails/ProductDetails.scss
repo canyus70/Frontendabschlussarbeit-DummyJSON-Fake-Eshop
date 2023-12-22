@@ -6,7 +6,6 @@
     @media (min-width: 576px){
         text-align: center;
     }
-
     .header_wrap_details{
         margin-top: 1vh;
         margin-bottom: 3vh;
@@ -36,7 +35,6 @@
             
         }
     }
-    
     .mediaQueries_wrap{
         @media (min-width: 1200px){
             display: flex;
@@ -64,12 +62,10 @@
             padding: 5%;
             border-bottom-left-radius: 24px;
             border-bottom-right-radius: 24px;
-
             .firstFlex_wrap_details{
                 display: flex;
                 justify-content: space-between;
                 text-align: left;
-
                 .quantityCounter_wrap_details{
                     display: flex;
                     align-items: center;
@@ -123,15 +119,19 @@
         }
     }
     .footer_wrap_details{
+        padding: 5% ;
         display: flex;
         flex-direction: column;
+        @media (min-width: 600px) {
+            align-items: center;            
+        }
         @media (min-width: 1200px){
             flex: 1 1 0;
+            align-items: flex-start;
         }
         .descriptionHeadline_details{
         margin-top: 3vh;
         margin-bottom: 1.5vh;
-        text-align: left;
         }
         .description_details {
         font-size: 1rem;
@@ -166,7 +166,4 @@
         }
     }
     }
-    
-
-    
 }

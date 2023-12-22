@@ -36,7 +36,7 @@
 			}
 		}
 		h2 {
-			font-size: 1.8vh;
+			font-size: 1.9vh;
 			font-family: "PoppinsReg", Arial, Helvetica, sans-serif;
 			display: block;
 			height: 7.7vh;
@@ -60,6 +60,8 @@
 		right: 0;
 		padding-block: 4%;
 		h3 {
+			font-family: "PoppinsBold", Arial, Helvetica, sans-serif;
+			text-shadow: 0 0 2px var(--shadow);
 			font-size: 0.7rem;
 			color: gray;
 			font-size: 2vh;

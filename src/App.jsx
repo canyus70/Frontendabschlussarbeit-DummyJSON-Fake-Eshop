@@ -27,7 +27,6 @@ import Favorites from "./components/favorites/Favorites";
 import Cart from "./components/cart/Cart";
 import Login from "./pages/Login/Login";
 import UserHome from "./pages/UserHome/UserHome";
-import { validate } from "uuid";
 
 function App() {
 	const productContext = useContext(Products);

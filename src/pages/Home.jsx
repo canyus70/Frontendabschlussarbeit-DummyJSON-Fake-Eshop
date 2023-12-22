@@ -26,7 +26,7 @@ const Home = () => {
 			<Search />
 			<CategoryBar />
 			<div className='title'>
-				<h3>popular</h3>
+				<h3>Popular</h3>
 				<Link to={`/productlist/${Allproducts}`}>
 					<h3>All Products</h3>
 				</Link>
